@@ -109,7 +109,7 @@
 
   /* --- Photo lightbox ---------------------------------------------------- */
   var lightbox = document.querySelector("#lightbox");
-  var tiles = document.querySelectorAll(".photo-grid__item");
+  var tiles = document.querySelectorAll("[data-full]");
 
   if (lightbox && tiles.length && typeof lightbox.showModal === "function") {
     var lbImg = lightbox.querySelector(".lightbox__img");
