@@ -658,6 +658,7 @@ a { color: inherit; text-decoration: none; }
 .info-panel {
   display: grid;
   gap: 14px;
+  align-items: start;
 }
 
 .panel {
