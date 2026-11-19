@@ -14,7 +14,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | `resources.html` | Resources — syllabus download, Semester I scheme, papers &amp; books to come |
 | `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
-| `fun.html` | Page of fun — full gallery of all seventeen photos, served at `/fun` |
+| `fun.html` | Page of fun — full gallery of all twenty-seven photos, served at `/fun` |
 | `about.html` | About me (stub) |
 
 ## Files
@@ -57,7 +57,7 @@ Or just open `index.html` directly — nothing needs compiling.
   That sheet carries no roll numbers; add a roll column when they arrive.
 - **Syllabus** — `docs/syllabus-btech-first-year.pdf`, the university's B.Tech First Year
   syllabus, 91 pages, covering the Semester I and II scheme and every course in detail.
-- **Photos** — seventeen batch photographs in `assets/photos/`. All of them live on
+- **Photos** — twenty-seven batch photographs in `assets/photos/`. All of them live on
   `fun.html` (served at `/fun` via `_redirects`); the home page shows seven with a link through.
   Every photo opens in a click-to-zoom lightbox.
 
