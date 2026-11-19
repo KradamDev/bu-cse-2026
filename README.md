@@ -12,7 +12,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | --- | --- |
 | `index.html` | Home — hero, the five sections, info and fun previews, feedback form, about |
 | `resources.html` | Resources (stub) |
-| `info.html` | Info (stub) |
+| `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
 | `fun.html` | Page of fun (stub) |
 | `about.html` | About me (stub) |
@@ -38,12 +38,21 @@ Or just open `index.html` directly — nothing needs compiling.
 ## Editing content
 
 - Colours, spacing and type live in the `:root` block at the top of `style.css`.
-- Student list entries on the home page are `<li data-name="...">` rows — the `data-name`
-  attribute is what the search box matches, so keep it lowercase.
+- Student list entries are `<li data-name="...">` rows — the `data-name` attribute is what the
+  search box matches, so keep it lowercase. Each searchable list sits in a
+  `<div data-student-block>` so a page can hold more than one.
 - Anything marked **Sample** on the page is placeholder content. Replace it with the real data
   before sharing the link widely.
 - The feedback form posts via `mailto:` to `kradam2557@gmail.com`. Change that address in
   `index.html`, `feedback.html` and `script.js` if it ever moves.
+
+## Where the real data came from
+
+- **Timetable** — the department sheet, Class 1st year / Branch CSE / Sem I / Room T1,
+  revised and effective 17 Aug 2026, session July–December 2026-27.
+- **Student list** — the department's 1st year students list, 62 names, numbered 01–62.
+  That sheet carries no roll numbers; add a roll column when they arrive.
+- Achievements and photo slots are still placeholders.
 
 ## Deploy
 

@@ -84,10 +84,12 @@
     setInterval(tick, 15000);
   }
 
-  /* --- Student list filter ---------------------------------------------- */
-  var search = document.querySelector("[data-student-search]");
-  var list = document.querySelector("[data-student-list]");
-  if (search && list) {
+  /* --- Student list filter (one or more searchable lists) ---------------- */
+  document.querySelectorAll("[data-student-block]").forEach(function (block) {
+    var search = block.querySelector("[data-student-search]");
+    var list = block.querySelector("[data-student-list]");
+    if (!search || !list) return;
+
     var empty = list.querySelector("[data-student-empty]");
     var rows = Array.prototype.slice.call(list.querySelectorAll("li[data-name]"));
 
@@ -103,7 +105,7 @@
 
       if (empty) empty.hidden = shown !== 0;
     });
-  }
+  });
 
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
