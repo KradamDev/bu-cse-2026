@@ -1639,8 +1639,16 @@ a { color: inherit; text-decoration: none; }
   text-align: left;
 }
 
+.photo-grid__item--strip {
+  grid-column: span 2;
+  aspect-ratio: 16 / 10;
+}
+
+.photo-grid__item--strip img { object-position: center 42%; }
+
 @media (min-width: 620px) {
   .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .photo-grid__item--strip { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
   .photo-grid__item--lead { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
   .photo-grid__item--lead img { min-height: 100%; }
 }

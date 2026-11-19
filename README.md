@@ -24,7 +24,7 @@ index.html  resources.html  info.html  feedback.html  fun.html  about.html
 style.css            one stylesheet, tokens at the top
 script.js            mobile nav, scroll reveal, IST clock, student-list filter, mailto subject
 assets/favicon.svg   the "26" mark
-assets/photos/       six batch photos, resized to 1500px and re-compressed for the web
+assets/photos/       seven batch photos, resized to 1500px and re-compressed for the web
 docs/                downloadable files (syllabus PDF and future papers)
 ```
 
@@ -56,9 +56,8 @@ Or just open `index.html` directly — nothing needs compiling.
   That sheet carries no roll numbers; add a roll column when they arrive.
 - **Syllabus** — `docs/syllabus-btech-first-year.pdf`, the university's B.Tech First Year
   syllabus, 91 pages, covering the Semester I and II scheme and every course in detail.
-- **Photos** — six batch photographs in `assets/photos/`, shown in the home page's Page of
+- **Photos** — seven batch photographs in `assets/photos/`, shown in the home page's Page of
   fun section with a click-to-zoom lightbox.
-- Achievements are still placeholder content.
 
 ## Deploy
 
