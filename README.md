@@ -11,7 +11,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | File | Page |
 | --- | --- |
 | `index.html` | Home — hero, the five sections, info and fun previews, feedback form, about |
-| `resources.html` | Resources (stub) |
+| `resources.html` | Resources — syllabus download, Semester I scheme, papers &amp; books to come |
 | `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
 | `fun.html` | Page of fun (stub) |
@@ -24,6 +24,7 @@ index.html  resources.html  info.html  feedback.html  fun.html  about.html
 style.css            one stylesheet, tokens at the top
 script.js            mobile nav, scroll reveal, IST clock, student-list filter, mailto subject
 assets/favicon.svg   the "26" mark
+docs/                downloadable files (syllabus PDF and future papers)
 ```
 
 ## Preview locally
@@ -52,6 +53,8 @@ Or just open `index.html` directly — nothing needs compiling.
   revised and effective 17 Aug 2026, session July–December 2026-27.
 - **Student list** — the department's 1st year students list, 62 names, numbered 01–62.
   That sheet carries no roll numbers; add a roll column when they arrive.
+- **Syllabus** — `docs/syllabus-btech-first-year.pdf`, the university's B.Tech First Year
+  syllabus, 91 pages, covering the Semester I and II scheme and every course in detail.
 - Achievements and photo slots are still placeholders.
 
 ## Deploy
