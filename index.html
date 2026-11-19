@@ -442,19 +442,50 @@
           <h2>Proof that we <em>did</em> leave the lab.</h2>
         </div>
         <p class="lead">
-          Photo slots below are placeholders — drop in real pictures from fests, trips and
-          those 2 a.m. debugging sessions.
+          Six frames from the first semester — feast day, the batch photograph, a guest on
+          campus, Pandal duty, the canteen, and one trip out. Tap any of them to see it full size.
         </p>
       </div>
 
       <div class="info-panel reveal">
-        <div class="fun-grid">
-          <div class="fun-tile fun-tile--a"><span class="fun-tile__label">Photo slot · Fest</span></div>
-          <div class="fun-tile fun-tile--b"><span class="fun-tile__label">Photo slot · Trip</span></div>
-          <div class="fun-tile fun-tile--c"><span class="fun-tile__label">Photo slot · Lab</span></div>
-          <div class="fun-tile fun-tile--d"><span class="fun-tile__label">Photo slot · Sports</span></div>
-          <div class="fun-tile fun-tile--e"><span class="fun-tile__label">Photo slot · Farewell</span></div>
-        </div>
+<div class="photo-grid reveal">
+        <button class="photo-grid__item photo-grid__item--lead" type="button"
+          data-full="assets/photos/feast-day.jpg"
+          data-caption="Feast day — Plates, ties and the whole row of us on the lawn — first-year feast.">
+          <img src="assets/photos/feast-day.jpg" alt="Group of students in college uniform holding plates of food at a campus feast" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Feast day</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/batch-on-steps.jpg"
+          data-caption="The whole batch — All of us on the department steps, front row to back.">
+          <img src="assets/photos/batch-on-steps.jpg" alt="Large group photograph of the batch on the steps outside the department building" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">The whole batch</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/guest-visit.jpg"
+          data-caption="A guest on campus — Orange robes, sweets in hand, and a corridor full of us.">
+          <img src="assets/photos/guest-visit.jpg" alt="Students in uniform standing with a visiting monk in orange robes" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">A guest on campus</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/durga-puja.jpg"
+          data-caption="Pandal duty — Durga Puja on campus — the group that turned up to help set up.">
+          <img src="assets/photos/durga-puja.jpg" alt="Students standing in front of a decorated Durga Puja pandal with the idol on stage" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Pandal duty</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/canteen-evening.jpg"
+          data-caption="Canteen, balloons up — Food counters, balloons and a table that stayed full.">
+          <img src="assets/photos/canteen-evening.jpg" alt="Students sitting around a canteen table during a celebration with balloons overhead" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Canteen, balloons up</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/hilltop.jpg"
+          data-caption="Pointing at the future — A trip out of campus, rocks, and somebody's idea of a pose.">
+          <img src="assets/photos/hilltop.jpg" alt="Group of students posing on rocks near a hilltop with trees behind them" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Pointing at the future</span>
+        </button>
+      </div>
 
         <div>
           <div class="panel__head">
@@ -666,6 +697,12 @@
     </div>
   </div>
 </footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="lightbox__close" type="button" aria-label="Close photo">×</button>
+  <img class="lightbox__img" src="" alt="">
+  <p class="lightbox__caption"></p>
+</dialog>
 
 <script src="script.js" defer></script>
 </body>

@@ -107,6 +107,36 @@
     });
   });
 
+  /* --- Photo lightbox ---------------------------------------------------- */
+  var lightbox = document.querySelector("#lightbox");
+  var tiles = document.querySelectorAll(".photo-grid__item");
+
+  if (lightbox && tiles.length && typeof lightbox.showModal === "function") {
+    var lbImg = lightbox.querySelector(".lightbox__img");
+    var lbCap = lightbox.querySelector(".lightbox__caption");
+    var lbClose = lightbox.querySelector(".lightbox__close");
+
+    tiles.forEach(function (tile) {
+      tile.addEventListener("click", function () {
+        var full = tile.getAttribute("data-full");
+        var alt = tile.querySelector("img").getAttribute("alt");
+        lbImg.setAttribute("src", full);
+        lbImg.setAttribute("alt", alt);
+        lbCap.textContent = tile.getAttribute("data-caption") || "";
+        lightbox.showModal();
+      });
+    });
+
+    lbClose.addEventListener("click", function () { lightbox.close(); });
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener("close", function () {
+      lbImg.removeAttribute("src");
+      lbImg.setAttribute("alt", "");
+    });
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
