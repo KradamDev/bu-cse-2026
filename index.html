@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BU CSE 2026 — the batch site</title>
+<meta name="description" content="Everything for the B.Tech CSE batch of 2026 at Bundelkhand University — question papers, books, syllabus, timetable, student list, feedback and the fun stuff, in one place.">
+<meta name="theme-color" content="#f7f5f0">
+<meta property="og:title" content="BU CSE 2026 — the batch site">
+<meta property="og:description" content="Question papers, books, syllabus, timetable, student list, feedback and the fun stuff — one place for the CSE batch of 2026.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="BU CSE 2026 — home">
+      <span class="brand__mark" aria-hidden="true">26</span>
+      <span class="brand__text">
+        <span class="brand__name">BU CSE</span>
+        <span class="brand__sub">Batch of 2026</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="info.html">Info</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="fun.html">Page of fun</a>
+      <a href="about.html">About me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="reveal">
+        <span class="eyebrow eyebrow--accent">Bundelkhand University · B.Tech CSE</span>
+        <h1>
+          <span class="line">Four years.</span>
+          <span class="line">One batch.</span>
+          <span class="line"><em>Everything</em> in one place.</span>
+        </h1>
+        <p class="hero__lead">
+          The unofficial home of BU CSE 2026. Question papers, books, the syllabus you keep
+          losing, the timetable that keeps changing, and the photos from the days that mattered —
+          all filed in one place, built by a classmate.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="resources.html">
+            Open resources
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#inside">See what's inside</a>
+        </div>
+
+        <div class="hero__meta">
+          <span>Computer Science &amp; Engineering</span>
+          <span>Semesters I–VIII</span>
+          <span>Est. 2022</span>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal" aria-label="Batch at a glance">
+        <div class="hero-card__top">
+          <div>
+            <div class="clock" id="clock">--:--</div>
+            <span class="clock__zone" id="clock-zone">Campus time · IST</span>
+          </div>
+          <span class="badge-2026" aria-hidden="true">2026</span>
+        </div>
+
+        <div class="hero-card__stats">
+          <div class="stat">
+            <div class="stat__num">60</div>
+            <div class="stat__label">Students</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">8</div>
+            <div class="stat__label">Semesters</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">40+</div>
+            <div class="stat__label">Subjects</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">1</div>
+            <div class="stat__label">Batch</div>
+          </div>
+        </div>
+
+        <p class="hero-card__note">
+          Sample figures — swap them for your real class strength once the list is final.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Data Structures</span><span>Operating Systems</span><span>DBMS</span>
+        <span>Computer Networks</span><span>Machine Learning</span><span>Compiler Design</span>
+        <span>Discrete Maths</span><span>Web Technologies</span>
+      </div>
+      <div class="marquee__group">
+        <span>Data Structures</span><span>Operating Systems</span><span>DBMS</span>
+        <span>Computer Networks</span><span>Machine Learning</span><span>Compiler Design</span>
+        <span>Discrete Maths</span><span>Web Technologies</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WHAT'S INSIDE ================= -->
+  <section class="section section--plain" id="inside">
+    <div class="wrap">
+      <div class="section__head section__head--split reveal">
+        <div>
+          <span class="eyebrow">00 — The index</span>
+          <h2>Five doors, <em>one</em> batch.</h2>
+        </div>
+        <p class="lead">
+          Every page is meant to answer a question you have already asked in the group chat.
+          Start anywhere.
+        </p>
+      </div>
+
+      <div class="inside-grid">
+
+        <article class="inside-card reveal">
+          <div class="inside-card__top">
+            <span class="inside-card__num">01</span>
+            <span class="inside-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/>
+                <path d="M4 5.5v15"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Resources</h3>
+          <p>Previous year question papers, notes, recommended books and lab manuals — sorted by semester.</p>
+          <div class="tag-row">
+            <span class="tag">Papers</span>
+            <span class="tag">Books</span>
+            <span class="tag">Notes</span>
+          </div>
+          <a class="inside-card__link" href="resources.html">
+            Browse resources <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="inside-card reveal">
+          <div class="inside-card__top">
+            <span class="inside-card__num">02</span>
+            <span class="inside-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="5" width="17" height="16" rx="2.5"/>
+                <path d="M3.5 10h17M8 3v4M16 3v4"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Info</h3>
+          <p>Syllabus, timetable, exam schedule and the full student list — the official stuff, minus the hunting.</p>
+          <div class="tag-row">
+            <span class="tag">Syllabus</span>
+            <span class="tag">Timetable</span>
+            <span class="tag">Students</span>
+          </div>
+          <a class="inside-card__link" href="info.html">
+            Open the info page <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="inside-card reveal">
+          <div class="inside-card__top">
+            <span class="inside-card__num">03</span>
+            <span class="inside-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 14.5A2.5 2.5 0 0 1 17.5 17H8l-4 4V6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5z"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Feedback</h3>
+          <p>Broken link, missing paper, a better idea for the site? Send a message — it goes straight to the inbox.</p>
+          <div class="tag-row">
+            <span class="tag">Message</span>
+            <span class="tag">Form</span>
+            <span class="tag">Requests</span>
+          </div>
+          <a class="inside-card__link" href="feedback.html">
+            Write a message <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="inside-card reveal">
+          <div class="inside-card__top">
+            <span class="inside-card__num">04</span>
+            <span class="inside-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4.5" width="18" height="15" rx="2.5"/>
+                <circle cx="8.5" cy="9.5" r="1.6"/>
+                <path d="m4 17 4.5-4.5 3.5 3 3-2.5L20 18"/>
+              </svg>
+            </span>
+          </div>
+          <h3>Page of fun</h3>
+          <p>Random photos from class trips and fests, plus the achievements nobody put on a notice board.</p>
+          <div class="tag-row">
+            <span class="tag">Photos</span>
+            <span class="tag">Events</span>
+            <span class="tag">Wins</span>
+          </div>
+          <a class="inside-card__link" href="fun.html">
+            Go have a look <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INFO PREVIEW ================= -->
+  <section class="section" id="info-preview">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">02 — Info</span>
+        <h2>The week, and <em>who's in it</em>.</h2>
+        <p class="lead">
+          A sample of the two things people open this site for most — the timetable and the
+          class list. Both are placeholders until the real data lands.
+        </p>
+      </div>
+
+      <div class="info-panel reveal">
+        <div class="panel">
+          <div class="panel__head">
+            <h3>This week · Section A</h3>
+            <span class="panel__note">Sample</span>
+          </div>
+          <table class="timetable">
+            <caption class="sr-only" style="position:absolute;left:-9999px">Sample weekly timetable</caption>
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Slot</th>
+                <th scope="col">Subject</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Mon</td><td>09:00 – 10:00</td><td>Design &amp; Analysis of Algorithms</td></tr>
+              <tr><td>Tue</td><td>10:00 – 11:00</td><td>Operating Systems</td></tr>
+              <tr><td>Wed</td><td>11:00 – 12:00</td><td>Computer Networks</td></tr>
+              <tr><td>Thu</td><td>09:00 – 11:00</td><td>DBMS Lab</td></tr>
+              <tr><td>Fri</td><td>12:00 – 13:00</td><td>Machine Learning</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head">
+            <h3>Student list</h3>
+            <span class="panel__note">Sample</span>
+          </div>
+
+          <div class="search-field">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <label for="student-search" class="sr-only" style="position:absolute;left:-9999px">Search the student list</label>
+            <input id="student-search" type="search" placeholder="Search a name or roll no." autocomplete="off" data-student-search>
+          </div>
+
+          <ul class="student-list" data-student-list>
+            <li data-name="aarav sharma bu22cse001"><span>Aarav Sharma</span><span class="roll">BU22CSE001</span></li>
+            <li data-name="ananya verma bu22cse002"><span>Ananya Verma</span><span class="roll">BU22CSE002</span></li>
+            <li data-name="devansh tiwari bu22cse003"><span>Devansh Tiwari</span><span class="roll">BU22CSE003</span></li>
+            <li data-name="ishita rai bu22cse004"><span>Ishita Rai</span><span class="roll">BU22CSE004</span></li>
+            <li data-name="kabir singh bu22cse005"><span>Kabir Singh</span><span class="roll">BU22CSE005</span></li>
+            <li data-name="meera yadav bu22cse006"><span>Meera Yadav</span><span class="roll">BU22CSE006</span></li>
+            <li data-name="rohit pal bu22cse007"><span>Rohit Pal</span><span class="roll">BU22CSE007</span></li>
+            <li data-name="sanya gupta bu22cse008"><span>Sanya Gupta</span><span class="roll">BU22CSE008</span></li>
+            <li class="student-list__empty" data-student-empty hidden>No match in the sample list.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FUN PREVIEW ================= -->
+  <section class="section" id="fun-preview">
+    <div class="wrap">
+      <div class="section__head section__head--split reveal">
+        <div>
+          <span class="eyebrow">04 — Page of fun</span>
+          <h2>Proof that we <em>did</em> leave the lab.</h2>
+        </div>
+        <p class="lead">
+          Photo slots below are placeholders — drop in real pictures from fests, trips and
+          those 2 a.m. debugging sessions.
+        </p>
+      </div>
+
+      <div class="info-panel reveal">
+        <div class="fun-grid">
+          <div class="fun-tile fun-tile--a"><span class="fun-tile__label">Photo slot · Fest</span></div>
+          <div class="fun-tile fun-tile--b"><span class="fun-tile__label">Photo slot · Trip</span></div>
+          <div class="fun-tile fun-tile--c"><span class="fun-tile__label">Photo slot · Lab</span></div>
+          <div class="fun-tile fun-tile--d"><span class="fun-tile__label">Photo slot · Sports</span></div>
+          <div class="fun-tile fun-tile--e"><span class="fun-tile__label">Photo slot · Farewell</span></div>
+        </div>
+
+        <div>
+          <div class="panel__head">
+            <h3>Achievements</h3>
+            <span class="panel__note">Sample</span>
+          </div>
+          <ul class="achievements">
+            <li>
+              <span class="year">2026</span>
+              <div>
+                <strong>Best project — annual tech exhibition</strong>
+                <small>Replace with your batch's real win</small>
+              </div>
+            </li>
+            <li>
+              <span class="year">2025</span>
+              <div>
+                <strong>Hackathon finalists, inter-college round</strong>
+                <small>Replace with your batch's real win</small>
+              </div>
+            </li>
+            <li>
+              <span class="year">2024</span>
+              <div>
+                <strong>Department cricket champions</strong>
+                <small>Replace with your batch's real win</small>
+              </div>
+            </li>
+            <li>
+              <span class="year">2023</span>
+              <div>
+                <strong>First open-source pull request merged</strong>
+                <small>Replace with your batch's real win</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEEDBACK ================= -->
+  <section class="section" id="feedback">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">03 — Feedback</span>
+        <h2>Tell us what's <em>missing</em>.</h2>
+        <p class="lead">
+          This site is only as good as what you send in. A paper, a correction, a page you want
+          built — write it below.
+        </p>
+      </div>
+
+      <div class="feedback-panel reveal">
+        <form class="form" action="mailto:kradam2557@gmail.com" method="post" enctype="text/plain" data-mail-form>
+          <div class="field-row">
+            <div class="field">
+              <label for="fb-name">Your name</label>
+              <input id="fb-name" name="name" type="text" placeholder="Name, or leave it blank" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="fb-topic">Topic</label>
+              <select id="fb-topic" name="topic">
+                <option>Missing resource</option>
+                <option>Wrong information</option>
+                <option>Site idea</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fb-message">Message</label>
+            <textarea id="fb-message" name="message" rows="4" required placeholder="What should we fix, add or remove?"></textarea>
+          </div>
+
+          <div class="form__foot">
+            <button class="btn btn--accent" type="submit">
+              Send message
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form__hint">Opens your email app with the message ready to send to kradam2557@gmail.com.</p>
+          </div>
+        </form>
+
+        <aside class="feedback-aside">
+          <h3>Good feedback looks like</h3>
+          <ul class="checklist">
+            <li>Naming the semester and subject.</li>
+            <li>Pasting the correct link or paper if you have it.</li>
+            <li>One message per topic — easier to track.</li>
+          </ul>
+          <a class="btn btn--ghost btn--sm" href="feedback.html">Open the full form</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">05 — About me</span>
+        <h2>Built by a <em>classmate</em>.</h2>
+      </div>
+
+      <div class="about-grid reveal">
+        <div class="about-card">
+          <div class="about-card__head">
+            <span class="avatar" aria-hidden="true">KD</span>
+            <div>
+              <div class="about-card__name">Kradam Dev</div>
+              <div class="about-card__role">Full-stack developer in the making</div>
+            </div>
+          </div>
+          <p>
+            I'm a student of the CSE batch of 2026 at Bundelkhand University and a self-taught
+            web developer — I started with HTML, CSS and JavaScript during the pandemic and have
+            been shipping small things for the web ever since. This site is one of them: plain
+            HTML, CSS and JavaScript, no framework, no build step.
+          </p>
+          <p>
+            I built it because the batch's material was scattered across drives, screenshots and
+            pinned messages. If you want a page added, the feedback form is the fastest route.
+          </p>
+
+          <dl class="facts">
+            <div><dt>University</dt><dd>Bundelkhand Univ.</dd></div>
+            <div><dt>Batch</dt><dd>CSE 2026</dd></div>
+            <div><dt>Focus</dt><dd>Full-stack</dd></div>
+            <div><dt>Building since</dt><dd>2020</dd></div>
+          </dl>
+
+          <div class="about-card__actions">
+            <a class="btn btn--accent btn--sm" href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">
+              View portfolio <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--ghost btn--sm" href="mailto:kradam2557@gmail.com">Email me</a>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card__head" style="border-bottom:0;padding-bottom:0">
+            <div>
+              <div class="about-card__role">About the site</div>
+              <div class="about-card__name" style="font-family:var(--serif);font-size:1.6rem;font-weight:400">BU CSE 2026</div>
+            </div>
+          </div>
+          <p>
+            An unofficial batch hub for the Computer Science &amp; Engineering class of 2026. It
+            exists to keep question papers, books, the syllabus, the timetable, the class list and
+            the photo archive in one place that anyone can open on a phone in ten seconds.
+          </p>
+          <dl class="facts">
+            <div><dt>Pages</dt><dd>Six</dd></div>
+            <div><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
+            <div><dt>Build step</dt><dd>None</dd></div>
+            <div><dt>Cost</dt><dd>Free to host</dd></div>
+          </dl>
+          <p style="margin-top:16px">
+            Everything here is student-maintained. Official notices from the department always win
+            over anything on this site.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>BU CSE <em style="font-style:italic;color:var(--accent)">2026</em></h2>
+        <p>The batch site for Computer Science &amp; Engineering, Bundelkhand University — kept alive by students.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="info.html">Info</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="fun.html">Page of fun</a></li>
+            <li><a href="about.html">About me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Elsewhere</h3>
+          <ul>
+            <li><a href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">Portfolio ↗</a></li>
+            <li><a href="mailto:kradam2557@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> BU CSE 2026 · Student-maintained</span>
+      <span>Built by <a href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">Kradam Dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+# BU CSE 2026
+
+The batch site for Computer Science & Engineering, Bundelkhand University — batch of 2026.
+
+Question papers, books, syllabus, timetable, the class list, feedback and the photo archive,
+all in one place. Built with plain HTML, CSS and JavaScript: no framework, no build step, no
+dependencies. The folder opens straight in a browser and deploys as-is.
+
+## Pages
+
+| File | Page |
+| --- | --- |
+| `index.html` | Home — hero, the five sections, info and fun previews, feedback form, about |
+| `resources.html` | Resources (stub) |
+| `info.html` | Info (stub) |
+| `feedback.html` | Feedback — working mailto form |
+| `fun.html` | Page of fun (stub) |
+| `about.html` | About me (stub) |
+
+## Files
+
+```
+index.html  resources.html  info.html  feedback.html  fun.html  about.html
+style.css            one stylesheet, tokens at the top
+script.js            mobile nav, scroll reveal, IST clock, student-list filter, mailto subject
+assets/favicon.svg   the "26" mark
+```
+
+## Preview locally
+
+```bash
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
+
+Or just open `index.html` directly — nothing needs compiling.
+
+## Editing content
+
+- Colours, spacing and type live in the `:root` block at the top of `style.css`.
+- Student list entries on the home page are `<li data-name="...">` rows — the `data-name`
+  attribute is what the search box matches, so keep it lowercase.
+- Anything marked **Sample** on the page is placeholder content. Replace it with the real data
+  before sharing the link widely.
+- The feedback form posts via `mailto:` to `kradam2557@gmail.com`. Change that address in
+  `index.html`, `feedback.html` and `script.js` if it ever moves.
+
+## Deploy
+
+Static hosting only — no build command, publish directory `.`.
