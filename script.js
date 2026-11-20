@@ -137,6 +137,41 @@
     });
   }
 
+  /* --- Progressive photo wall -------------------------------------------- */
+  var wall = document.querySelector("[data-photo-wall]");
+  var moreBtn = document.querySelector("[data-load-more]");
+
+  if (wall && moreBtn) {
+    var wallItems = Array.prototype.slice.call(wall.querySelectorAll(".photo-wall__item"));
+    var STEP = 15;
+    var shown = Math.min(STEP, wallItems.length);
+
+    wallItems.forEach(function (item, i) {
+      if (i >= shown) item.classList.add("is-pending");
+    });
+
+    function updateMore() {
+      var left = wallItems.length - shown;
+      if (left <= 0) {
+        moreBtn.hidden = true;
+        return;
+      }
+      moreBtn.hidden = false;
+      moreBtn.textContent = left > STEP
+        ? "Load " + STEP + " more photos"
+        : "Load the last " + left + (left === 1 ? " photo" : " photos");
+    }
+
+    moreBtn.addEventListener("click", function () {
+      var next = Math.min(shown + STEP, wallItems.length);
+      for (var i = shown; i < next; i++) wallItems[i].classList.remove("is-pending");
+      shown = next;
+      updateMore();
+    });
+
+    updateMore();
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

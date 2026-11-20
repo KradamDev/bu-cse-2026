@@ -18,6 +18,18 @@
 </head>
 <body>
 
+<div class="bg-art" aria-hidden="true">
+  <svg class="bg-art__shape bg-art__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94"/><circle cx="100" cy="100" r="58"/></svg>
+  <svg class="bg-art__shape bg-art__tri" viewBox="0 0 200 200"><path d="M100 18 182 174H18z"/><path d="M100 66v54M74 146h52"/></svg>
+  <svg class="bg-art__shape bg-art__plus" viewBox="0 0 200 200"><path d="M100 22v156M22 100h156"/></svg>
+  <svg class="bg-art__shape bg-art__arc" viewBox="0 0 200 200"><path d="M18 100a82 82 0 0 1 164 0"/><path d="M52 100a48 48 0 0 1 96 0"/></svg>
+  <svg class="bg-art__shape bg-art__square" viewBox="0 0 200 200"><rect x="32" y="32" width="136" height="136" rx="5"/><path d="M32 100h136M100 32v136"/></svg>
+  <svg class="bg-art__shape bg-art__hex" viewBox="0 0 200 200"><path d="M100 14 174 57v86L100 186 26 143V57z"/><circle cx="100" cy="100" r="30"/></svg>
+  <svg class="bg-art__shape bg-art__dots" viewBox="0 0 200 200"><path d="M20 40h160M20 80h160M20 120h160M20 160h160" stroke-dasharray="2 12"/></svg>
+  <svg class="bg-art__shape bg-art__wave" viewBox="0 0 200 200"><path d="M10 140q25-40 50 0t50 0 50 0"/><path d="M10 100q25-40 50 0t50 0 50 0"/><path d="M10 60q25-40 50 0t50 0 50 0"/></svg>
+  <svg class="bg-art__shape bg-art__cross" viewBox="0 0 200 200"><path d="M40 40 160 160M160 40 40 160"/></svg>
+</div>
+
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 
 <header class="site-header">
@@ -50,7 +62,7 @@
     <div class="wrap reveal">
       <span class="eyebrow eyebrow--accent">BU CSE 2026</span>
       <h1>Resources <em>for every semester.</em></h1>
-      <p class="lead">The syllabus is in. Papers, books and notes are being collected — everything lands here as a file hosted with the site.</p>
+      <p class="lead">The syllabus is here as a file hosted with the site, and every semester's papers and sessionals are one click away.</p>
     </div>
   </section>
 
@@ -86,81 +98,34 @@
       </p>
     </section>
 
-    <section class="section" id="scheme">
+    <section class="section" id="papers">
       <div class="section__head reveal">
-        <span class="eyebrow">02 — Semester I scheme</span>
-        <h2>What it's <em>marked on</em>.</h2>
+        <span class="eyebrow">02 — Papers &amp; books</span>
+        <h2>Everything the batch has <em>collected</em>.</h2>
         <p class="lead">
-          Lectures, credits and total marks for each course, straight from page three of the
-          syllabus.
+          Previous year papers and sessionals, semester by semester. Each one opens a shared
+          folder — if a link stops working, send a fresh one through feedback.
         </p>
-      </div>
-
-      <div class="panel reveal">
-        <div class="table-scroll">
-          <table class="timetable scheme-table">
-            <caption>Study and evaluation scheme, B.Tech First Year, Semester I — as printed in the
-              university syllabus</caption>
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Course code</th>
-                <th scope="col">Course title</th>
-                <th scope="col">L-T-P</th>
-                <th scope="col">Credit</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr><td>1</td><td class="code">MA-1841 · MA*-1842 · BT*-1852 · FT*-1842 · FT*-1852</td><td>Maths I / Elementary Mathematics-I / Remedial Biology-I / Elementary Mathematics / Elementary Biology-I</td><td class="num">3-0-0</td><td class="num">3</td><td class="num">150</td></tr>
-            <tr><td>2</td><td class="code">ME-1850 · HU-1851</td><td>Manufacturing Process / Environment and Ecology (no credit)</td><td class="num">2-0-0</td><td class="num">2 / 0</td><td class="num">50</td></tr>
-            <tr><td>3</td><td class="code">PH-1843</td><td>Engineering Physics-I</td><td class="num">2-0-0</td><td class="num">2</td><td class="num">75</td></tr>
-            <tr><td>4</td><td class="code">CY-1844 · ME-1845</td><td>Engineering Chemistry / Engineering Mechanics</td><td class="num">3-0-0</td><td class="num">3</td><td class="num">150</td></tr>
-            <tr><td>5</td><td class="code">EE-1846 · CS-1847</td><td>Electrical Engineering / Computer Concepts &amp; Programming in C</td><td class="num">3-0-0</td><td class="num">3</td><td class="num">150</td></tr>
-            <tr><td>6</td><td class="code">EC-1848 · HU-1849</td><td>Electronic Engineering / Professional Communication</td><td class="num">3-0-0</td><td class="num">3</td><td class="num">150</td></tr>
-            <tr><td>7</td><td class="code">PH-10859 · HU-10860</td><td>Physics Lab / Professional Communication Lab</td><td class="num">0-0-2</td><td class="num">1</td><td class="num">75</td></tr>
-            <tr><td>8</td><td class="code">CY-10853 · ME-10854</td><td>Engineering Chemistry Lab / Engineering Mechanics Lab</td><td class="num">0-0-2</td><td class="num">1</td><td class="num">75</td></tr>
-            <tr><td>9</td><td class="code">WS-10857 · CS-10858</td><td>Workshop Practice / Computer Aided Engg. Graphics Lab</td><td class="num">0-0-2</td><td class="num">1</td><td class="num">75</td></tr>
-            <tr><td>10</td><td class="code">EE-10855 · CS-10856</td><td>Electrical Engineering Lab / Computer Programming Lab</td><td class="num">0-0-2</td><td class="num">1</td><td class="num">75</td></tr>
-            <tr><td>11</td><td class="code">10861 · GP-101</td><td>General Proficiency (no credit)</td><td class="num">—</td><td class="num">—</td><td class="num">50</td></tr>
-            <tr class="is-total"><td></td><td></td><td>Total</td><td class="num">16-0-8</td><td class="num">20 / 18</td><td class="num">1025 / 975</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="panel__foot">
-          L-T-P is lectures, tutorials and practicals per week. Six theory courses, four labs and
-          general proficiency make up the semester; general proficiency carries no credit and is
-          not added to the total.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="coming">
-      <div class="section__head reveal">
-        <span class="eyebrow">03 — Being collected</span>
-        <h2>Papers and <em>books</em>, next.</h2>
       </div>
 
       <div class="info-panel reveal">
         <div class="panel">
           <div class="panel__head">
-            <h3>Previous year papers</h3>
-            <span class="panel__note">Coming</span>
+            <h3>Semester PDFs</h3>
+            <span class="panel__note">2 folders</span>
           </div>
-          <ul class="checklist">
-            <li>Semester I end-semester papers, as many years as the batch can gather.</li>
-            <li>Filed by course code so they sit next to the right syllabus.</li>
+          <ul class="link-list">
+            <li><a href="https://drive.google.com/drive/folders/1uVV077nq9AcartCeZSVr9sqRBcNCnvo0" target="_blank" rel="noopener">1st semester pdfs<span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://drive.google.com/drive/folders/1NcnKzlAlie0W9gl1nxgO8liyFyT6l_Cu" target="_blank" rel="noopener">2nd semester pdfs<span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
-
         <div class="panel">
           <div class="panel__head">
-            <h3>Books and notes</h3>
-            <span class="panel__note">Coming</span>
+            <h3>Sessional PDFs</h3>
+            <span class="panel__note">1 folder</span>
           </div>
-          <ul class="checklist">
-            <li>One recommended book per course, with the edition that matches the syllabus.</li>
-            <li>Class notes and lab manuals shared by the batch.</li>
+          <ul class="link-list">
+            <li><a href="https://drive.google.com/drive/folders/1wLBKqVQ3loassiGxjhch03FIU78AsphC" target="_blank" rel="noopener">1st year sessional pdfs<span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
       </div>

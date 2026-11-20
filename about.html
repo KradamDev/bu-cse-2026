@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About me — BU CSE 2026</title>
-<meta name="description" content="About Kradam Dev — the student behind the BU CSE 2026 batch site — with links to his portfolio and email.">
+<title>About me — Kradam Dev · BU CSE 2026</title>
+<meta name="description" content="Kradam Dev — first-year CSE student at Bundelkhand University, self-taught web developer, and the person behind this batch site.">
 <meta name="theme-color" content="#f7f5f0">
 <meta property="og:title" content="About me — BU CSE 2026">
-<meta property="og:description" content="About Kradam Dev — the student behind the BU CSE 2026 batch site — with links to his portfolio and email.">
+<meta property="og:description" content="Kradam Dev — first-year CSE student at Bundelkhand University, self-taught web developer, and the person behind this batch site.">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,18 @@
 <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
+
+<div class="bg-art" aria-hidden="true">
+  <svg class="bg-art__shape bg-art__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94"/><circle cx="100" cy="100" r="58"/></svg>
+  <svg class="bg-art__shape bg-art__tri" viewBox="0 0 200 200"><path d="M100 18 182 174H18z"/><path d="M100 66v54M74 146h52"/></svg>
+  <svg class="bg-art__shape bg-art__plus" viewBox="0 0 200 200"><path d="M100 22v156M22 100h156"/></svg>
+  <svg class="bg-art__shape bg-art__arc" viewBox="0 0 200 200"><path d="M18 100a82 82 0 0 1 164 0"/><path d="M52 100a48 48 0 0 1 96 0"/></svg>
+  <svg class="bg-art__shape bg-art__square" viewBox="0 0 200 200"><rect x="32" y="32" width="136" height="136" rx="5"/><path d="M32 100h136M100 32v136"/></svg>
+  <svg class="bg-art__shape bg-art__hex" viewBox="0 0 200 200"><path d="M100 14 174 57v86L100 186 26 143V57z"/><circle cx="100" cy="100" r="30"/></svg>
+  <svg class="bg-art__shape bg-art__dots" viewBox="0 0 200 200"><path d="M20 40h160M20 80h160M20 120h160M20 160h160" stroke-dasharray="2 12"/></svg>
+  <svg class="bg-art__shape bg-art__wave" viewBox="0 0 200 200"><path d="M10 140q25-40 50 0t50 0 50 0"/><path d="M10 100q25-40 50 0t50 0 50 0"/><path d="M10 60q25-40 50 0t50 0 50 0"/></svg>
+  <svg class="bg-art__shape bg-art__cross" viewBox="0 0 200 200"><path d="M40 40 160 160M160 40 40 160"/></svg>
+</div>
 
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 
@@ -48,56 +60,94 @@
 <main id="main">
   <section class="page-head">
     <div class="wrap reveal">
-      <span class="eyebrow eyebrow--accent">BU CSE 2026</span>
-      <h1>About me <em>and this site.</em></h1>
-      <p class="lead">I'm Kradam Dev, a student of the CSE batch of 2026 at Bundelkhand University and a self-taught web developer. This site is mine, and it's yours to use.</p>
+      <span class="eyebrow eyebrow--accent">About me</span>
+      <h1>Kradam Dev <em>and this site.</em></h1>
+      <p class="lead">
+        Full-stack developer in the making. I like breaking down problems and building things
+        that work — this batch site is one of them.
+      </p>
+
+      <div class="portfolio-cta">
+        <span class="portfolio-cta__label">Portfolio</span>
+        <a class="btn btn--accent btn--sm" href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">
+          CLICK HERE <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <span class="portfolio-cta__note">Projects, stack and contact — all on the portfolio site.</span>
+      </div>
     </div>
   </section>
 
   <div class="wrap">
-    <section class="stub reveal">
-      <span class="stub__status">In progress — content lands next</span>
-      <h2>This page is being built.</h2>
-      <p class="lead">
-        The home page is live and the structure is in place. What you see below is the plan for
-        this page, so you know exactly what is coming.
-      </p>
-
-      <div class="stub__cols">
-        <div>
-          <h3>What will live here</h3>
-          <ul class="checklist">
-            <li>A longer about — how I started building, and what I'm learning now.</li>
-            <li>The projects I've shipped, starting with Dev AI System and the Image Prompting Guide.</li>
-            <li>The stack I work with: HTML, CSS, JavaScript, and React in progress.</li>
-            <li>Direct links to my portfolio and email.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Notes</h3>
-          <ul class="checklist">
-            <li>Portfolio: <a class="inline-link" href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">kradam-portfolio.netlify.app</a></li>
-            <li>Email: kradam2557@gmail.com</li>
-            <li>Built with plain HTML, CSS and JavaScript — no framework.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="about-card" style="border:0;padding:0">
-        <div class="about-card__head" style="padding-bottom:0;border-bottom:0">
-          <span class="avatar" aria-hidden="true">KD</span>
-          <div>
-            <div class="about-card__name">Kradam Dev</div>
-            <div class="about-card__role">Full-stack developer in the making</div>
+    <section class="section section--plain" style="padding-top:8px" id="about">
+      <div class="about-cols reveal">
+        <div class="about-card">
+          <div class="about-card__head">
+            <span class="avatar" aria-hidden="true">KD</span>
+            <div>
+              <div class="about-card__name">Kradam Dev</div>
+              <div class="about-card__role">Full-stack developer in the making</div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="stub__actions">
-        <a class="btn btn--accent" href="index.html">Back to home <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn--ghost" href="feedback.html">Suggest what to add</a>
+          <p>
+            I'm a first-year student at Bundelkhand University and a self-taught web developer. I
+            picked up HTML, CSS and JavaScript during the Covid pandemic and have been hooked on
+            building for the web ever since.
+          </p>
+          <p>
+            Lately I've been diving into vibe coding and prompt engineering — figuring out how to
+            work with AI tools like Claude and Sonnet to build faster and ship more. The
+            fundamentals are comfortable now, and I'm moving toward React and the full-stack side
+            of things.
+          </p>
+          <p>
+            My goal is straightforward: stay at the forefront of where technology is heading and
+            build things that are genuinely useful. Problem-solving is what excites me — the
+            messier the problem, the better.
+          </p>
+
+          <span class="now-chip">Currently: learning React and exploring vibe coding</span>
+
+          <dl class="facts">
+            <div><dt>University</dt><dd>Bundelkhand Univ.</dd></div>
+            <div><dt>Year</dt><dd>1st Year</dd></div>
+            <div><dt>Focus</dt><dd>Full-Stack</dd></div>
+            <div><dt>Learning</dt><dd>React</dd></div>
+            <div><dt>Location</dt><dd>India</dd></div>
+            <div><dt>Building since</dt><dd>2020</dd></div>
+          </dl>
+
+        </div>
+
+        <div class="about-card">
+          <div class="about-card__head">
+            <div>
+              <div class="about-card__role">About the site</div>
+              <div class="about-card__name" style="font-family: var(--serif); font-size: 1.6rem; font-weight: 400">BU CSE 2026</div>
+            </div>
+          </div>
+
+          <p>
+            An unofficial batch hub for the Computer Science &amp; Engineering class of 2026. It
+            keeps question papers, the syllabus, the timetable, the class list and the photo
+            archive in one place that anyone can open on a phone in ten seconds.
+          </p>
+          <p>
+            I built it because the batch's material was scattered across drives, screenshots and
+            pinned messages. Everything here is student-maintained — official notices from the
+            department always win over anything on this site.
+          </p>
+
+          <dl class="facts">
+            <div><dt>Pages</dt><dd>Six</dd></div>
+            <div><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
+            <div><dt>Build step</dt><dd>None</dd></div>
+            <div><dt>Photos</dt><dd>37</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
+
   </div>
 </main>
 

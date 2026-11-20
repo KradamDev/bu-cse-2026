@@ -11,7 +11,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | File | Page |
 | --- | --- |
 | `index.html` | Home — hero, the five sections, info and fun previews, feedback form, about |
-| `resources.html` | Resources — syllabus download, Semester I scheme, papers &amp; books to come |
+| `resources.html` | Resources — syllabus download and Drive folders for papers and sessionals |
 | `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
 | `fun.html` | Page of fun — full gallery of all thirty-seven photos, served at `/fun` |
@@ -24,6 +24,7 @@ index.html  resources.html  info.html  feedback.html  fun.html  about.html
 style.css            one stylesheet, tokens at the top
 script.js            mobile nav, scroll reveal, IST clock, student-list filter, mailto subject
 assets/favicon.svg   the "26" mark
+assets/bu-logo.png   Bundelkhand University emblem, shown in the home page's at-a-glance card
 assets/photos/       seven batch photos, resized to 1500px and re-compressed for the web
 docs/                downloadable files (syllabus PDF and future papers)
 _redirects           serves fun.html at /fun
