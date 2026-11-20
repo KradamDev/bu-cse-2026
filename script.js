@@ -172,6 +172,101 @@
     updateMore();
   }
 
+  /* --- Timetable: today's classes and today's row ------------------------ */
+  var TIMETABLE = {
+    Mon: [
+      { slot: "I · 10–11", subject: "Environment & Ecology", who: "A. K. Giri" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "CCP Lab (B2) · Mechanics Lab (B1)", who: "Er. B. B. Niranjan · Er. Rajat Kushwaha", lab: true }
+    ],
+    Tue: [
+      { slot: "I · 10–11", subject: "Environment & Ecology", who: "A. K. Giri" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "Professional Communication Lab", who: "Dr. Manisha Jain · Communication Lab", lab: true }
+    ],
+    Wed: [
+      { slot: "I · 10–11", subject: "Engg. Physics", who: "Dr. Anjita Srivastava" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "Mechanics Lab (B2) · CAD Lab (B1)", who: "Er. Rajat Kushwaha · Dr. Satendra Upadhyay", lab: true }
+    ],
+    Thu: [
+      { slot: "I · 10–11", subject: "Engg. Physics", who: "Dr. Anjita Srivastava" },
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
+      { slot: "IV–V · 2–4", subject: "CCP Lab (B2)", who: "Dr. Satendra Upadhyay · Mech. Dept.", lab: true }
+    ],
+    Fri: [
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
+      { slot: "IV–V · 2–4", subject: "CCP Lab (B1)", who: "Er. B. B. Niranjan · Lab 1", lab: true }
+    ],
+    Sat: [
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" }
+    ]
+  };
+
+  var DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var todayKey = DAY_NAMES[new Date().getDay()];
+
+  /* home page: compact strip */
+  var strip = document.querySelector("[data-today-classes]");
+  if (strip) {
+    var dayLabel = strip.querySelector("[data-today-day]");
+    var dateLabel = strip.querySelector("[data-today-date]");
+    var list = strip.querySelector("[data-today-list]");
+    var entries = TIMETABLE[todayKey] || [];
+
+    if (dayLabel) dayLabel.textContent = todayKey === "Sun" ? "Sunday" : todayKey + "day";
+    if (dateLabel) {
+      dateLabel.textContent = new Intl.DateTimeFormat("en-IN", {
+        day: "numeric", month: "long"
+      }).format(new Date());
+    }
+
+    if (list) {
+      if (!entries.length) {
+        var empty = document.createElement("li");
+        empty.className = "today-strip__empty";
+        empty.textContent = "No classes today. The full week is on the info page.";
+        list.appendChild(empty);
+        list.classList.add("is-empty");
+      } else {
+        entries.forEach(function (e) {
+          var li = document.createElement("li");
+          var slot = document.createElement("span");
+          slot.className = "slot";
+          slot.textContent = e.slot;
+          var subject = document.createElement("span");
+          subject.className = "subject";
+          subject.textContent = e.subject;
+          var who = document.createElement("span");
+          who.className = "who";
+          who.textContent = e.who;
+          li.appendChild(slot);
+          li.appendChild(subject);
+          li.appendChild(who);
+          list.appendChild(li);
+        });
+      }
+    }
+  }
+
+  /* info page: mark today's row */
+  var grid = document.querySelector(".timetable--grid");
+  if (grid && todayKey !== "Sun") {
+    Array.prototype.forEach.call(grid.querySelectorAll("tbody tr"), function (row) {
+      var head = row.querySelector('th[scope="row"]');
+      if (head && head.textContent.trim() === todayKey) {
+        row.classList.add("is-today");
+        head.setAttribute("aria-current", "date");
+      }
+    });
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

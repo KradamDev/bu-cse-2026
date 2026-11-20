@@ -14,7 +14,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | `resources.html` | Resources — syllabus download and Drive folders for papers and sessionals |
 | `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
-| `fun.html` | Page of fun — full gallery, reachable at `/fun` or `/fun.html` |
+| `fun.html` | Moments — full gallery, reachable at `/fun` or `/fun.html` |
 | `about.html` | About me (stub) |
 
 ## Files
