@@ -14,7 +14,7 @@ dependencies. The folder opens straight in a browser and deploys as-is.
 | `resources.html` | Resources — syllabus download and Drive folders for papers and sessionals |
 | `info.html` | Info — Semester I timetable, subjects &amp; faculty, official student list |
 | `feedback.html` | Feedback — working mailto form |
-| `fun.html` | Page of fun — full gallery of all thirty-seven photos, served at `/fun` |
+| `fun.html` | Page of fun — full gallery, reachable at `/fun` or `/fun.html` |
 | `about.html` | About me (stub) |
 
 ## Files
@@ -27,7 +27,6 @@ assets/favicon.svg   the "26" mark
 assets/bu-logo.png   Bundelkhand University emblem, shown in the home page's at-a-glance card
 assets/photos/       seven batch photos, resized to 1500px and re-compressed for the web
 docs/                downloadable files (syllabus PDF and future papers)
-_redirects           serves fun.html at /fun
 ```
 
 ## Preview locally
@@ -59,7 +58,7 @@ Or just open `index.html` directly — nothing needs compiling.
 - **Syllabus** — `docs/syllabus-btech-first-year.pdf`, the university's B.Tech First Year
   syllabus, 91 pages, covering the Semester I and II scheme and every course in detail.
 - **Photos** — thirty-seven batch photographs in `assets/photos/`. All of them live on
-  `fun.html` (served at `/fun` via `_redirects`); the home page shows seven with a link through.
+  `fun.html` (reachable at `/fun`); the home page shows seven with a link through.
   Every photo opens in a click-to-zoom lightbox.
 
 ## Deploy
