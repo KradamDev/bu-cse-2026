@@ -1614,7 +1614,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: var(--paper);
   cursor: zoom-in;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1665,7 +1665,12 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 620px) {
   .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
   .photo-grid__item--strip { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
-  .photo-grid__item--lead { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 3; }
+  .photo-grid__item--lead {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+    height: 100%;
+  }
 }
 
 /* --- Photo wall (full gallery page) --------------------------------------- */
