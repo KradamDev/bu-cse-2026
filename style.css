@@ -1583,6 +1583,11 @@ a { color: inherit; text-decoration: none; }
 .photo-grid__item:hover img { transform: scale(1.04); }
 .photo-grid__item:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+/* photos that stay off the small screen */
+@media (max-width: 619px) {
+  .photo-grid__item--desktop-only { display: none; }
+}
+
 .photo-grid__label {
   position: absolute;
   left: 8px;

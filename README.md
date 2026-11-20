@@ -44,6 +44,8 @@ Or just open `index.html` directly — nothing needs compiling.
 - Student list entries are `<li data-name="...">` rows — the `data-name` attribute is what the
   search box matches, so keep it lowercase. Each searchable list sits in a
   `<div data-student-block>` so a page can hold more than one.
+- The canteen photo on the home page carries `photo-grid__item--desktop-only`, which hides it
+  below 620px so the mobile grid stays short. Add or remove that class to control it.
 - Anything marked **Sample** on the page is placeholder content. Replace it with the real data
   before sharing the link widely.
 - The feedback form posts via `mailto:` to `kradam2557@gmail.com`. Change that address in
