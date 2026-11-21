@@ -2176,3 +2176,56 @@ td.is-lab::before {
     background: var(--accent);
   }
 }
+
+/* --- Section jump bar ----------------------------------------------------- */
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 0 0;
+}
+
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  border-color: var(--ink);
+  background: rgba(20, 18, 16, 0.04);
+}
+
+/* --- Student gender mark -------------------------------------------------- */
+.gender {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  color: var(--muted);
+  vertical-align: -3px;
+}
+
+.gender svg { width: 13px; height: 13px; }
+.gender--f { color: var(--accent-ink); }
+
+/* --- Books grid: tighter, packs across wide screens ----------------------- */
+#books .info-panel {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+#books .panel { padding: 18px; }
+#books .link-list a { padding: 12px 13px; }
