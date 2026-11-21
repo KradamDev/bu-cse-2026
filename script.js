@@ -31,7 +31,7 @@
 
   /* --- Active nav item (works for stubs too) ----------------------------- */
   var here = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("#site-nav a").forEach(function (link) {
+  document.querySelectorAll("#site-nav a, .bottom-nav a").forEach(function (link) {
     var target = link.getAttribute("href");
     if (target === here) {
       link.setAttribute("aria-current", "page");
@@ -210,6 +210,10 @@
   };
 
   var DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var FULL_DAYS = {
+    Sun: "Sunday", Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday",
+    Thu: "Thursday", Fri: "Friday", Sat: "Saturday"
+  };
   var todayKey = DAY_NAMES[new Date().getDay()];
 
   /* home page: compact strip */
@@ -220,7 +224,7 @@
     var list = strip.querySelector("[data-today-list]");
     var entries = TIMETABLE[todayKey] || [];
 
-    if (dayLabel) dayLabel.textContent = todayKey === "Sun" ? "Sunday" : todayKey + "day";
+    if (dayLabel) dayLabel.textContent = FULL_DAYS[todayKey] || todayKey;
     if (dateLabel) {
       dateLabel.textContent = new Intl.DateTimeFormat("en-IN", {
         day: "numeric", month: "long"
