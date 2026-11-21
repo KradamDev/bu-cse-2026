@@ -12,9 +12,9 @@
   --muted: #57534e;
   --line: #e4e0d6;
   --line-strong: #cfc9bc;
-  --accent: #ee7a17;
-  --accent-ink: #b4510a;
-  --accent-soft: #fdf1e4;
+  --accent: #ff9933;
+  --accent-ink: #b45309;
+  --accent-soft: #fff2e1;
 
   --radius: 14px;
   --radius-lg: 22px;
@@ -135,7 +135,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent-ink);
   font-weight: 500;
   padding: 0 2px;
-  border-bottom: 1px solid rgba(238, 122, 23, 0.38);
+  border-bottom: 1px solid rgba(255, 153, 51, 0.45);
   background-image: linear-gradient(var(--accent-soft), var(--accent-soft));
   background-repeat: no-repeat;
   background-position: 0 88%;
@@ -176,7 +176,7 @@ a { color: inherit; text-decoration: none; }
 .btn:active { transform: translateY(0); }
 
 .btn--accent { background: var(--accent); color: var(--ink); }
-.btn--accent:hover { background: #f78f38; }
+.btn--accent:hover { background: #ffab57; }
 
 .btn--ghost {
   background: transparent;
@@ -463,7 +463,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px;
   letter-spacing: 0.06em;
   transform: rotate(9deg);
-  box-shadow: 0 10px 24px -12px rgba(238, 122, 23, 0.55);
+  box-shadow: 0 10px 24px -12px rgba(255, 153, 51, 0.6);
 }
 
 .hero-card__stats {
@@ -838,7 +838,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink);
 }
 
-.timetable--grid td.is-lab { background: #fffaf4; }
+.timetable--grid td.is-lab { background: #fffaf2; }
 
 .timetable--grid td.is-empty {
   background-image: repeating-linear-gradient(135deg, rgba(20, 18, 16, 0.045) 0 1px, transparent 1px 8px);
@@ -1098,7 +1098,7 @@ a { color: inherit; text-decoration: none; }
   outline: none;
   border-color: var(--accent);
   background: var(--paper-2);
-  box-shadow: 0 0 0 3px rgba(238, 122, 23, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.16);
 }
 
 .field-row {

@@ -30,10 +30,15 @@
   }
 
   /* --- Active nav item (works for stubs too) ----------------------------- */
-  var here = location.pathname.split("/").pop() || "index.html";
+  function pageSlug(path) {
+    var file = String(path || "").split("#")[0].split("/").pop();
+    if (!file) return "index";
+    return file.replace(/\.html$/, "") || "index";
+  }
+
+  var here = pageSlug(location.pathname);
   document.querySelectorAll("#site-nav a, .bottom-nav a").forEach(function (link) {
-    var target = link.getAttribute("href");
-    if (target === here) {
+    if (pageSlug(link.getAttribute("href")) === here) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
