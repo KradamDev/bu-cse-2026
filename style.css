@@ -37,7 +37,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 82px;
 }
 
 body {
@@ -429,6 +429,21 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
+}
+
+.clock-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+
+.clock__date {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .clock {
@@ -2222,14 +2237,14 @@ td.is-lab::before {
 .gender--f { color: var(--accent-ink); }
 
 /* --- Books grid: tighter, packs across wide screens ----------------------- */
-#reading .info-panel {
+#books .info-panel {
   display: block;
   column-width: 300px;
   column-count: 3;
   column-gap: 12px;
 }
 
-#reading .panel {
+#books .panel {
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -2237,7 +2252,7 @@ td.is-lab::before {
   padding: 18px;
 }
 
-#reading .link-list a { padding: 12px 13px; }
+#books .link-list a { padding: 12px 13px; }
 
 /* --- Theme toggle --------------------------------------------------------- */
 .theme-toggle {

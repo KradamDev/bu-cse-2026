@@ -83,7 +83,17 @@
       }).format(now);
       clock.textContent = time;
       var zone = document.querySelector("#clock-zone");
-      if (zone) zone.textContent = day + " · Campus time · IST";
+      if (zone) zone.textContent = "Campus time · IST";
+
+      var dateEl = document.querySelector("[data-clock-date]");
+      if (dateEl) {
+        dateEl.textContent = new Intl.DateTimeFormat("en-IN", {
+          timeZone: "Asia/Kolkata",
+          weekday: "short",
+          day: "numeric",
+          month: "short"
+        }).format(now);
+      }
     };
     tick();
     setInterval(tick, 15000);
