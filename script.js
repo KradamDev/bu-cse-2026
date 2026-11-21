@@ -276,6 +276,27 @@
     });
   }
 
+  /* --- Theme toggle ------------------------------------------------------ */
+  var themeBtn = document.querySelector("[data-theme-toggle]");
+
+  function applyThemeLabel() {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (themeBtn) {
+      themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+  }
+
+  if (themeBtn) {
+    applyThemeLabel();
+    themeBtn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("bu-theme", next); } catch (e) {}
+      applyThemeLabel();
+    });
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

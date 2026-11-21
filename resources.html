@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.remove('no-js');</script>
+<script>(function(){try{var t=localStorage.getItem("bu-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
 
@@ -54,6 +55,15 @@
       <a href="fun.html">Moments</a>
       <a href="about.html">About me</a>
     </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+      <svg class="theme-toggle__sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="3.6"/><path d="M10 1.6v1.9M10 16.5v1.9M1.6 10h1.9M16.5 10h1.9M4.1 4.1l1.3 1.3M14.6 14.6l1.3 1.3M15.9 4.1l-1.3 1.3M5.4 14.6l-1.3 1.3"/>
+      </svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M16.2 12.6A6.8 6.8 0 0 1 7.4 3.8 7.2 7.2 0 1 0 16.2 12.6z"/>
+      </svg>
+    </button>
   </div>
 </header>
 
@@ -62,15 +72,15 @@
     <div class="wrap reveal">
       <span class="eyebrow eyebrow--accent">BU CSE 2026</span>
       <h1>Resources <em>for every semester.</em></h1>
-      <p class="lead">The syllabus is hosted with the site, papers and sessionals are one click away, and the reference books are filed by subject.</p>
+      <p class="lead">The syllabus is hosted with the site, papers and sessionals are one click away, and the references are filed by subject.</p>
     </div>
   </section>
 
   <div class="wrap">
     <nav class="section-nav" aria-label="Jump to a section">
       <a href="#downloads">Downloads</a>
-      <a href="#papers">Papers &amp; books</a>
-      <a href="#books">Books</a>
+      <a href="#papers">Papers</a>
+      <a href="#reading">Reading</a>
     </nav>
     <section class="section section--plain" style="padding-top:8px" id="downloads">
       <div class="section__head reveal">
@@ -105,7 +115,7 @@
 
     <section class="section" id="papers">
       <div class="section__head reveal">
-        <span class="eyebrow">02 — Papers &amp; books</span>
+        <span class="eyebrow">02 — Papers</span>
         <h2>Everything the batch has <em>collected</em>.</h2>
         <p class="lead">
           Previous year papers and sessionals, semester by semester. Each one opens a shared
@@ -136,18 +146,18 @@
       </div>
 
       <div class="stub__actions reveal" style="margin-top:22px">
-        <a class="btn btn--accent" href="feedback.html">Send a paper or a book <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--accent" href="feedback.html">Send a paper or a reference <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn--ghost" href="info.html#timetable">See the timetable</a>
       </div>
     </section>
 
-    <section class="section" id="books">
+    <section class="section" id="reading">
       <div class="section__head reveal">
-        <span class="eyebrow">03 — Books</span>
-        <h2>Books, <em>subject-wise</em>.</h2>
+        <span class="eyebrow">03 — Reading</span>
+        <h2>Reading, <em>subject-wise</em>.</h2>
         <p class="lead">
-          The reference books the batch is actually using, filed by course. Each one opens as a
-          PDF in Drive.
+          The references the batch is actually using, filed by course. Each one opens as a PDF
+          in Drive.
         </p>
       </div>
 
@@ -155,7 +165,7 @@
         <div class="panel">
           <div class="panel__head">
             <h3>Mechanics</h3>
-            <span class="panel__note">1 book</span>
+            <span class="panel__note">1 PDF</span>
           </div>
           <ul class="link-list">
             <li><a href="https://drive.google.com/file/d/13h5Oulv13rpXet0fDEOOd7nGmFWHLy7G/view?usp=drive_link" target="_blank" rel="noopener"><span class="link-list__main">Engineering Mechanics — Dr. R. K. Bansal</span><span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
@@ -164,7 +174,7 @@
         <div class="panel">
           <div class="panel__head">
             <h3>Mathematics</h3>
-            <span class="panel__note">3 books</span>
+            <span class="panel__note">3 PDFs</span>
           </div>
           <ul class="link-list">
             <li><a href="https://drive.google.com/file/d/17RKngrX9GJMTdSR2yQRk4hTlIBVtjV1A/view?usp=drive_link" target="_blank" rel="noopener"><span class="link-list__main">Introduction to Engineering Mathematics, Volume I</span><span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
@@ -175,7 +185,7 @@
         <div class="panel">
           <div class="panel__head">
             <h3>CCP</h3>
-            <span class="panel__note">1 book</span>
+            <span class="panel__note">1 PDF</span>
           </div>
           <ul class="link-list">
             <li><a href="https://drive.google.com/file/d/1PifNAMJIAr-EAETStfk13z-xBISQtl7I/view?usp=drive_link" target="_blank" rel="noopener"><span class="link-list__main">Let Us C — Yashwant Kanetkar</span><span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
@@ -184,7 +194,7 @@
         <div class="panel">
           <div class="panel__head">
             <h3>Environment &amp; Ecology</h3>
-            <span class="panel__note">2 books</span>
+            <span class="panel__note">2 PDFs</span>
           </div>
           <ul class="link-list">
             <li><a href="https://drive.google.com/file/d/18wQeXaz5s84UcIAwZGTQ0BTwMC6WALrb/view?usp=drive_link" target="_blank" rel="noopener"><span class="link-list__main">Environment and Ecology — Anil Kumar De</span><span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
@@ -194,7 +204,7 @@
         <div class="panel">
           <div class="panel__head">
             <h3>Digital Logic</h3>
-            <span class="panel__note">1 book</span>
+            <span class="panel__note">1 PDF</span>
           </div>
           <ul class="link-list">
             <li><a href="https://drive.google.com/file/d/1cmOvzJQWJ0NqkfbYcYfMQWh5IdaqhdvJ/view?usp=drive_link" target="_blank" rel="noopener"><span class="link-list__main">Digital Logic and Computer Design — M. Morris Mano</span><span class="link-list__arrow" aria-hidden="true">↗</span></a></li>
