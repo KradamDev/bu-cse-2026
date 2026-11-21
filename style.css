@@ -2165,9 +2165,10 @@ td.is-lab::before {
     align-content: center;
     gap: 3px;
     min-height: 52px;
+    margin: 0 2px;
     padding: 3px 1px;
-    border-radius: 10px;
-    color: var(--muted);
+    border-radius: 12px;
+    color: var(--ink-2);
     font-size: 12px;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -2179,17 +2180,17 @@ td.is-lab::before {
 
   .bottom-nav a:active { background: rgba(20, 18, 16, 0.04); }
 
-  .bottom-nav a[aria-current="page"] { color: var(--accent-ink); font-weight: 600; }
+  .bottom-nav a[aria-current="page"] {
+    background: var(--accent-soft);
+    color: #9a3f06;
+    font-weight: 600;
+  }
 
   .bottom-nav a[aria-current="page"] svg { stroke-width: 2; }
 
-  .bottom-nav a[aria-current="page"]::after {
-    content: "";
-    width: 4px;
-    height: 4px;
-    margin-top: 1px;
-    border-radius: 50%;
-    background: var(--accent);
+  [data-theme="dark"] .bottom-nav a[aria-current="page"] {
+    color: var(--accent-ink);
+    background: rgba(255, 153, 51, 0.16);
   }
 }
 
