@@ -2390,3 +2390,11 @@ td.is-lab::before {
   color: var(--accent-ink);
   padding-top: 2px;
 }
+
+/* The "See today's classes" button lands on the card, clear of the sticky header.
+   Only this anchor is offset; the global scroll-padding is untouched. */
+#today { scroll-margin-top: 86px; }
+
+@media (max-width: 899px) {
+  #today { scroll-margin-top: 77px; }
+}
