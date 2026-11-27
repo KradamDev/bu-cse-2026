@@ -2398,3 +2398,498 @@ td.is-lab::before {
 @media (max-width: 899px) {
   #today { scroll-margin-top: 77px; }
 }
+
+/* ==========================================================================
+   LIQUID GLASS LAYER
+   Soft, fluid surfaces: deep rounding, glossy specular tops, warm amber
+   refraction, slow drifting light. No per-element backdrop blur, so the
+   page stays smooth while still reading as glass.
+   ========================================================================== */
+
+:root {
+  --paper: #f7f3ec;
+  --paper-2: #fffdfa;
+  --ink: #17130e;
+  --ink-2: #3b342b;
+  --muted: #5f574c;
+  --line: rgba(255, 255, 255, 0.75);
+  --line-strong: rgba(255, 255, 255, 0.9);
+  --accent: #ff8a1f;
+  --accent-ink: #b0510a;
+  --accent-soft: #ffe9d2;
+
+  --radius: 22px;
+  --radius-lg: 30px;
+  --shadow-sm: 0 2px 6px -2px rgba(120, 80, 20, 0.18);
+  --shadow: 0 26px 50px -32px rgba(120, 80, 20, 0.5), 0 2px 6px -2px rgba(120, 80, 20, 0.14);
+
+  --liquid-fill-1: rgba(255, 255, 255, 0.78);
+  --liquid-fill-2: rgba(255, 255, 255, 0.4);
+  --liquid-fill-3: rgba(255, 246, 235, 0.62);
+  --liquid-edge: rgba(255, 255, 255, 0.9);
+  --liquid-glow: rgba(255, 138, 31, 0.28);
+  --liquid-spec: rgba(255, 255, 255, 0.95);
+  --liquid-tint-strong: rgba(255, 255, 255, 0.5);
+  --liquid-tint-soft: rgba(255, 255, 255, 0.28);
+  --liquid-tint-hover: rgba(255, 255, 255, 0.52);
+  --liquid-scroll: rgba(23, 19, 14, 0.22);
+
+  --sp-1: 6px;  --sp-2: 10px; --sp-3: 14px; --sp-4: 18px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 44px; --sp-8: 60px; --sp-9: 80px;
+}
+
+/* --- the light the glass floats on --------------------------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -18%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(42vmax 42vmax at 12% 8%, rgba(255, 138, 31, 0.4), transparent 62%),
+    radial-gradient(36vmax 36vmax at 88% 12%, rgba(255, 197, 120, 0.5), transparent 60%),
+    radial-gradient(46vmax 46vmax at 78% 86%, rgba(255, 160, 70, 0.34), transparent 64%),
+    radial-gradient(34vmax 34vmax at 18% 90%, rgba(255, 236, 210, 0.8), transparent 62%);
+  animation: liquid-drift 46s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes liquid-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(3%, -3%, 0) scale(1.08); }
+}
+
+.bg-art__shape { opacity: 0.05; }
+.bg-art__tri, .bg-art__hex, .bg-art__dots, .bg-art__wave, .bg-art__cross, .bg-art__square { display: none; }
+
+/* --- the glass recipe ---------------------------------------------------- */
+.hero-card,
+.panel,
+.inside-card,
+.file-card,
+.project-card,
+.about-card,
+.feedback-aside,
+.portfolio-cta,
+.timetable--grid,
+.student-list,
+.stub,
+.section-nav a,
+.theme-toggle,
+.nav-toggle,
+.search-field,
+.field input,
+.field select,
+.field textarea {
+  background-color: var(--liquid-fill-2);
+  background-image:
+    /* specular: the wet highlight that sits at the top-left of a curved pane */
+    radial-gradient(120% 90% at 8% -10%, var(--liquid-spec) 0%, transparent 46%),
+    /* body of the liquid: light sinking to a warm tint at the far edge */
+    linear-gradient(158deg, var(--liquid-fill-1) 0%, var(--liquid-fill-2) 42%, var(--liquid-fill-3) 100%);
+  border: 1px solid var(--liquid-edge);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 26px 50px -32px rgba(120, 80, 20, 0.55),
+    0 2px 6px -2px rgba(120, 80, 20, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -18px 30px -22px var(--liquid-glow);
+  transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.panel:hover,
+.inside-card:hover,
+.file-card:hover,
+.project-card:hover,
+.about-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 34px 60px -34px rgba(120, 80, 20, 0.6),
+    0 4px 10px -4px rgba(120, 80, 20, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -20px 34px -22px var(--liquid-glow);
+}
+
+/* small surfaces: same liquid, tighter radius */
+.section-nav a,
+.theme-toggle,
+.nav-toggle,
+.search-field,
+.field input,
+.field select,
+.field textarea {
+  border-radius: 16px;
+  background-image:
+    radial-gradient(120% 90% at 10% -20%, var(--liquid-spec) 0%, transparent 50%),
+    linear-gradient(158deg, var(--liquid-fill-1), var(--liquid-fill-2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 18px -14px rgba(120, 80, 20, 0.5);
+}
+
+/* --- header and bars ----------------------------------------------------- */
+.site-header {
+  background-color: rgba(252, 249, 243, 0.88);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.35));
+  border-bottom: 1px solid var(--liquid-edge);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.bottom-nav {
+  background-color: rgba(252, 249, 243, 0.94);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.35));
+  border-top: 1px solid var(--liquid-edge);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.brand__mark {
+  border-radius: 14px;
+  background-image: linear-gradient(150deg, #ffb066, var(--accent));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 6px 14px -8px rgba(176, 81, 10, 0.7);
+}
+
+.nav a { border-radius: 999px; }
+.nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent-ink); }
+
+/* --- buttons: pill, glossy ---------------------------------------------- */
+.btn {
+  border-radius: 999px;
+  border: 1px solid var(--liquid-edge);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 10px 22px -16px rgba(120, 80, 20, 0.6);
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 200ms ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn--accent {
+  background: linear-gradient(160deg, #ffb066 0%, var(--accent) 55%, #f07600 100%);
+  color: #241203;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 14px 26px -16px rgba(176, 81, 10, 0.75);
+}
+
+.btn--ghost {
+  background-color: var(--liquid-fill-2);
+  background-image: linear-gradient(158deg, var(--liquid-fill-1), transparent 80%);
+  color: var(--ink);
+}
+
+/* --- tables inside the pane --------------------------------------------- */
+.timetable--grid {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-color: var(--liquid-edge);
+  overflow: hidden;
+}
+
+.timetable--grid th,
+.timetable--grid td { background-color: transparent; border-color: rgba(23, 19, 14, 0.08); }
+
+.timetable--grid thead th { background-color: var(--liquid-tint-strong); }
+
+.timetable--grid tbody th { background-color: var(--liquid-tint-strong); }
+
+.timetable--grid tbody tr.is-today td { background-color: rgba(255, 196, 128, 0.4); }
+.timetable--grid tbody tr.is-today th[scope="row"] { background-color: rgba(255, 196, 128, 0.55); }
+
+td.is-lab { background-color: var(--liquid-tint-soft); }
+
+td.is-lab::before { border-color: rgba(176, 81, 10, 0.35); background: rgba(255, 255, 255, 0.7); }
+
+/* --- lists: these are containers inside a card, so they get no surface
+   of their own -- no fill, no gradient sheen, no radius ------------------- */
+.student-list,
+.today-strip__list,
+.link-list {
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* the roster sits directly on the card: no second frame either */
+.student-list {
+  border: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--liquid-scroll) transparent;
+}
+
+.student-list::-webkit-scrollbar { width: 8px; }
+.student-list::-webkit-scrollbar-track { background: transparent; }
+.student-list::-webkit-scrollbar-thumb {
+  background: var(--liquid-scroll);
+  border-radius: 999px;
+}
+.student-list li,
+.link-list a,
+.today-strip__list li {
+  background-color: transparent;
+  background-image: none;
+}
+.link-list a:hover { background-color: var(--liquid-tint-hover); }
+.legend > div { background-color: transparent; }
+
+/* --- chips and badges ---------------------------------------------------- */
+.tag, .badge-2026, .badge-cr, .panel__note, .now-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(160deg, #ffb066, var(--accent));
+  color: #241203;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.panel__note {
+  background-image: none;
+  background-color: var(--liquid-tint-strong);
+  color: var(--muted);
+  border-color: rgba(23, 19, 14, 0.1);
+}
+
+/* --- photos: rounded, glossy edge --------------------------------------- */
+.photo-grid__item, .photo-wall__item {
+  border-radius: 20px;
+  border: 1px solid var(--liquid-edge);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 18px 34px -26px rgba(120, 80, 20, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.photo-grid__label, .photo-wall__label {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: var(--ink);
+}
+
+/* --- bands --------------------------------------------------------------- */
+.marquee {
+  background-color: var(--liquid-tint-soft);
+  border-block-color: var(--liquid-edge);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-footer {
+  background-color: var(--liquid-fill-2);
+  background-image: linear-gradient(180deg, var(--liquid-fill-1), transparent 65%);
+  border-top: 1px solid var(--liquid-edge);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* --- dark: molten glass -------------------------------------------------- */
+[data-theme="dark"] {
+  --paper: #14110c;
+  --paper-2: #1b1711;
+  --ink: #f4ece0;
+  --ink-2: #d8cfc0;
+  --muted: #a89e8e;
+  --line: rgba(255, 226, 186, 0.14);
+  --line-strong: rgba(255, 226, 186, 0.22);
+  --accent: #ff8a1f;
+  --accent-ink: #ffb877;
+  --accent-soft: #2a1d0e;
+  --liquid-fill-1: rgba(255, 226, 186, 0.12);
+  --liquid-fill-2: rgba(60, 48, 34, 0.45);
+  --liquid-fill-3: rgba(255, 160, 70, 0.1);
+  --liquid-edge: rgba(255, 226, 186, 0.2);
+  --liquid-glow: rgba(255, 138, 31, 0.22);
+  --liquid-spec: rgba(255, 226, 186, 0.22);
+  --liquid-tint-strong: rgba(255, 226, 186, 0.1);
+  --liquid-tint-soft: rgba(255, 226, 186, 0.05);
+  --liquid-tint-hover: rgba(255, 226, 186, 0.13);
+  --liquid-scroll: rgba(255, 226, 186, 0.26);
+}
+
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(42vmax 42vmax at 12% 8%, rgba(255, 138, 31, 0.22), transparent 62%),
+    radial-gradient(36vmax 36vmax at 88% 12%, rgba(196, 122, 40, 0.24), transparent 60%),
+    radial-gradient(46vmax 46vmax at 78% 86%, rgba(255, 140, 40, 0.16), transparent 64%),
+    radial-gradient(34vmax 34vmax at 18% 90%, rgba(110, 70, 28, 0.3), transparent 62%);
+}
+
+[data-theme="dark"] .site-header {
+  background-color: rgba(22, 18, 13, 0.92);
+  background-image: linear-gradient(180deg, rgba(255, 226, 186, 0.08), transparent);
+}
+
+[data-theme="dark"] .bottom-nav {
+  background-color: rgba(22, 18, 13, 0.95);
+  background-image: linear-gradient(0deg, rgba(255, 226, 186, 0.08), transparent);
+}
+
+[data-theme="dark"] .timetable--grid th,
+[data-theme="dark"] .timetable--grid td { border-color: rgba(255, 226, 186, 0.1); }
+[data-theme="dark"] .timetable--grid tbody tr.is-today td { background-color: rgba(255, 153, 51, 0.18); }
+[data-theme="dark"] .timetable--grid tbody tr.is-today th[scope="row"] { background-color: rgba(255, 153, 51, 0.26); }
+[data-theme="dark"] td.is-lab { background-color: rgba(255, 226, 186, 0.05); }
+
+[data-theme="dark"] .photo-grid__label,
+[data-theme="dark"] .photo-wall__label { background: rgba(30, 26, 20, 0.9); color: var(--ink); }
+
+[data-theme="dark"] .btn--accent { color: #241203; }
+
+/* --- spacing: one rhythm, inside and out -------------------------------- */
+.section { padding-block: 80px; }
+.section--plain { padding-block: 64px; }
+.section__head { margin-bottom: 34px; }
+.section__head h2 { margin: 0 0 12px; }
+.page-head { padding: 56px 0 38px; }
+.hero { padding: 52px 0 66px; }
+.hero__grid { gap: 46px; }
+.panel { padding: 26px; }
+.panel__head { gap: 12px; margin-bottom: 16px; padding-bottom: 14px; }
+.panel__foot { margin-top: 16px; padding-top: 14px; }
+/* this column became a card, so it needs the same inner room as the rest */
+.feedback-aside { padding: 26px; gap: 18px; }
+.feedback-aside h3 { margin: 0; }
+
+.info-panel { gap: 18px; }
+.today-strip { gap: 14px; }
+.photo-grid { gap: 12px; }
+.link-list a { padding: 13px 15px; }
+.student-list li { padding: 10px 12px; }
+.cta-row { gap: 14px; margin-top: 20px; }
+.numbered { gap: 14px; }
+.checklist li { margin-bottom: 10px; }
+.footer-top { gap: 32px; padding-bottom: 32px; }
+.site-footer { padding: 58px 0 32px; }
+.section-nav { margin-bottom: 28px; }
+
+@media (max-width: 899px) {
+  .section { padding-block: 54px; }
+  .section--plain { padding-block: 44px; }
+  .section__head { margin-bottom: 24px; }
+  .page-head { padding: 38px 0 28px; }
+  .hero { padding: 36px 0 46px; }
+  .hero__grid { gap: 30px; }
+  .panel { padding: 20px; }
+  .feedback-aside { padding: 20px; gap: 14px; }
+  .info-panel { gap: 14px; }
+  .site-footer { padding: 42px 0 24px; }
+  .footer-top { gap: 24px; padding-bottom: 24px; }
+}
+
+/* --- motion: smooth and cheap ------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+
+/* the roster inside the students block stays transparent too */
+#students .student-list,
+#students .student-list li {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* --- inner structures paint nothing -------------------------------------
+   Any list, legend or table that lives inside a card is transparent all the
+   way up, so the card (or the page wash) is the only surface you see. */
+.legend,
+.timetable--grid,
+.student-list,
+.today-strip__list,
+.link-list {
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legend > div,
+.timetable--grid thead th,
+.timetable--grid tbody th {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* the timetable keeps only its rule lines, which is how it reads as a grid */
+.timetable--grid th,
+.timetable--grid td { border-color: var(--liquid-edge); }
+
+/* --- chips that must stay legible on the dark glass ---------------------
+   Light fill, near-black type: these carry information, so they read as
+   labels rather than as decoration. */
+.now-chip,
+[data-theme="dark"] .now-chip,
+.panel__note,
+[data-theme="dark"] .panel__note,
+.file-card__icon,
+[data-theme="dark"] .file-card__icon,
+td.is-lab::before,
+[data-theme="dark"] td.is-lab::before {
+  background-color: rgba(255, 255, 255, 0.93);
+  background-image: none;
+  color: #14110c;
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 6px -4px rgba(0, 0, 0, 0.45);
+}
+
+td.is-lab::before { font-weight: 600; }
+
+/* --- back to top -------------------------------------------------------- */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--liquid-edge);
+  background-color: var(--liquid-fill-2);
+  background-image:
+    radial-gradient(120% 90% at 30% -10%, var(--liquid-spec) 0%, transparent 55%),
+    linear-gradient(158deg, var(--liquid-fill-1), var(--liquid-fill-2));
+  color: var(--ink);
+  box-shadow:
+    0 12px 24px -14px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+  cursor: pointer;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.to-top:hover { transform: translateY(-2px); }
+.to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 899px) {
+  .to-top {
+    right: 16px;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .to-top { transition: none; }
+}
+
+/* the hidden attribute must win over any display rule a component sets */
+[hidden] { display: none !important; }
+
+/* --- no blur anywhere: this is what keeps scrolling smooth --------------- */
+.bottom-nav,
+.lightbox::backdrop,
+.lightbox__close {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
