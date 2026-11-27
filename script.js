@@ -322,14 +322,9 @@
     '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
   document.body.appendChild(toTop);
 
-  var topTicking = false;
   function syncToTop() {
-    if (topTicking) return;
-    topTicking = true;
-    requestAnimationFrame(function () {
-      toTop.classList.toggle("is-visible", window.scrollY > 400);
-      topTicking = false;
-    });
+    /* one class toggle; the browser already coalesces scroll events per frame */
+    toTop.classList.toggle("is-visible", window.scrollY > 400);
   }
   window.addEventListener("scroll", syncToTop, { passive: true });
   window.addEventListener("resize", syncToTop);
