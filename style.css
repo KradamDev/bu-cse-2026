@@ -3506,3 +3506,23 @@ td.is-lab::before { font-weight: 600; }
 [data-theme="light"] .fab-attendance.is-current {
   border-color: var(--ink);
 }
+/* --- the theme toggle matches the floating buttons in light ------------- */
+[data-theme="light"] .theme-toggle {
+  border: 1.5px solid rgba(20, 18, 16, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 1px 2px rgba(20, 18, 16, 0.08);
+}
+
+[data-theme="light"] .theme-toggle:hover { border-color: var(--ink); }
+/* --- chip text: normal ink, so it is white on the dark popup ------------ */
+.att-chip { color: var(--ink); }
+.att-chip__text b { color: inherit; }
+.att-chip__slot { color: var(--muted); }
+
+.att-chip.is-present { color: var(--accent-ink); }
+.att-chip.is-present .att-chip__slot { color: var(--accent-ink); opacity: 0.75; }
+.att-chip.is-absent { color: var(--muted); }
+
+[data-theme="dark"] .att-chip.is-present { color: #ffd7a8; }
+[data-theme="dark"] .att-chip.is-present .att-chip__slot { color: #ffd7a8; opacity: 0.7; }
+
+.att-modal { color: var(--ink); }
