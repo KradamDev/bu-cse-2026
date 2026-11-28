@@ -3530,17 +3530,6 @@ td.is-lab::before { font-weight: 600; }
 .exam-table td:first-child,
 .exam-table th:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-.exam-table .exam-code {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--accent-ink);
-  white-space: nowrap;
-}
-
-.exam-table td:last-child,
-.exam-table th:last-child { white-space: nowrap; }
-
 .exam-table tbody tr.is-next td {
   background-color: rgba(255, 153, 51, 0.16);
   font-weight: 600;
