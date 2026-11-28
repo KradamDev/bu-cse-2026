@@ -2893,3 +2893,63 @@ td.is-lab::before { font-weight: 600; }
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+
+/* ==========================================================================
+   TWO DETAILS
+   1. The hero readout is set in the monospace, so the figures sit like an
+      instrument panel rather than as display type.
+   2. A 3px saffron-white-green hairline closes the header and opens the
+      footer. Nothing else about the palette changes.
+   ========================================================================== */
+
+.stat__num,
+.clock {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.stat__label,
+.clock__zone,
+.clock__date {
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- the hairline ------------------------------------------------------- */
+.site-header { border-bottom: 0; }
+.site-footer { border-top: 0; }
+
+.site-header::after,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    #ff9933 0 33.34%,
+    #ffffff 33.34% 66.67%,
+    #138808 66.67% 100%);
+  pointer-events: none;
+}
+
+/* a hair of shadow so the white band reads against cream paper */
+.site-header::after {
+  bottom: -1px;
+  box-shadow: 0 1px 0 rgba(20, 18, 16, 0.12);
+}
+
+.site-footer::before {
+  top: 0;
+  box-shadow: 0 -1px 0 rgba(20, 18, 16, 0.06), 0 1px 0 rgba(20, 18, 16, 0.12);
+}
+
+[data-theme="dark"] .site-header::after {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .site-footer::before {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(0, 0, 0, 0.55);
+}
