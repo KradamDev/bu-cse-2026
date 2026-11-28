@@ -108,12 +108,19 @@
     var empty = list.querySelector("[data-student-empty]");
     var rows = Array.prototype.slice.call(list.querySelectorAll("li[data-name]"));
 
+    /* data-name is "01 aadity kumar" — the roll, then the name */
+    rows.forEach(function (row) {
+      var parts = row.getAttribute("data-name").split(" ");
+      row.setAttribute("data-person", parts.slice(1).join(" "));
+    });
+
     search.addEventListener("input", function () {
       var q = search.value.trim().toLowerCase();
       var shown = 0;
 
       rows.forEach(function (row) {
-        var hit = !q || row.getAttribute("data-name").toLowerCase().indexOf(q) !== -1;
+        /* one rule only: the name must begin with what was typed */
+        var hit = !q || row.getAttribute("data-person").indexOf(q) === 0;
         row.classList.toggle("is-hidden", !hit);
         if (hit) shown++;
       });
@@ -150,6 +157,26 @@
       lbImg.removeAttribute("src");
       lbImg.setAttribute("alt", "");
     });
+
+  /* --- Full screen from the photo viewer --------------------------------- */
+  var fullBtn = document.querySelector(".lightbox__full");
+  var lb = document.getElementById("lightbox");
+
+  if (fullBtn && lb) {
+    fullBtn.addEventListener("click", function () {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (lb.requestFullscreen) {
+        lb.requestFullscreen().catch(function () {});
+      }
+    });
+
+    document.addEventListener("fullscreenchange", function () {
+      var on = !!document.fullscreenElement;
+      fullBtn.setAttribute("aria-label", on ? "Exit full screen" : "View full screen");
+      lb.classList.toggle("is-fullscreen", on);
+    });
+  }
   }
 
   /* --- Progressive photo wall -------------------------------------------- */

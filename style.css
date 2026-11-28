@@ -3543,7 +3543,7 @@ td.is-lab::before { font-weight: 600; }
 .exam-table td:first-child { width: 132px; }
 
 .exam-table th:nth-child(2),
-.exam-table td:nth-child(2) { width: 300px; }
+.exam-table td:nth-child(2) { width: 210px; }
 
 @media (max-width: 700px) {
   .exam-table th:first-child,
@@ -3566,3 +3566,27 @@ td.is-lab::before { font-weight: 600; }
   color: var(--muted);
   white-space: nowrap;
 }
+/* --- full screen control in the photo viewer --------------------------- */
+.lightbox__full {
+  position: absolute;
+  top: 12px;
+  right: 58px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-2);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.lightbox__full:hover { border-color: var(--accent); color: var(--accent-ink); }
+
+.lightbox.is-fullscreen { border-radius: 0; padding: 0; background: #000; }
+.lightbox.is-fullscreen .lightbox__img { max-height: 100vh; border-radius: 0; }
+.lightbox.is-fullscreen .lightbox__caption { display: none; }
+.lightbox.is-fullscreen .lightbox__close,
+.lightbox.is-fullscreen .lightbox__full { background: rgba(0, 0, 0, 0.55); color: #fff; border-color: rgba(255, 255, 255, 0.4); }
