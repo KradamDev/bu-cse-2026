@@ -3535,21 +3535,34 @@ td.is-lab::before { font-weight: 600; }
   font-weight: 600;
 }
 
-.exam-table tbody tr.is-next td:first-child { position: relative; }
+[data-theme="dark"] .exam-table tbody tr.is-next td { background-color: rgba(255, 153, 51, 0.14); }
+/* the sheet is two short columns, not a full-width table */
+.exam-table { width: auto; table-layout: auto; }
 
-.exam-table tbody tr.is-next td:first-child::after {
-  content: "next";
-  display: inline-block;
-  margin-left: 8px;
-  padding: 1px 6px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #2c1200;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  vertical-align: 2px;
+.exam-table th:first-child,
+.exam-table td:first-child { width: 132px; }
+
+.exam-table th:nth-child(2),
+.exam-table td:nth-child(2) { width: 300px; }
+
+@media (max-width: 700px) {
+  .exam-table th:first-child,
+  .exam-table td:first-child { width: 104px; }
+
+  .exam-table th:nth-child(2),
+  .exam-table td:nth-child(2) { width: auto; }
 }
 
-[data-theme="dark"] .exam-table tbody tr.is-next td { background-color: rgba(255, 153, 51, 0.14); }
+/* the time reads like the DATESHEET label, not like a tag */
+.exam-time {
+  background: none;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
