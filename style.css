@@ -3014,7 +3014,7 @@ td.is-lab::before { font-weight: 600; }
 .bg-art .art-code--sm { font-size: 22px; }
 
 /* formulas sit a little stronger than the line art so they can be read */
-.bg-art__shape.art-text { opacity: 0.12; }
+.bg-art__shape.art-text { opacity: 0.1; }
 
 /* Each motif rides its own lane at 45 degrees. Equal vmax steps on both axes
    keep the angle exact, and parallel lanes never cross, so two motifs cannot
@@ -3033,39 +3033,56 @@ td.is-lab::before { font-weight: 600; }
 /* text stays upright: a rotating formula reads as noise */
 .bg-art__shape.art-text { animation-name: art-lane; }
 
-.art-demorgan { top: -62%; width: 220px; height: 48px;  animation-duration: 88s, 300s; animation-delay: -6s,   0s; }
-.art-main     { top: -51%; width: 260px; height: 47px;  animation-duration: 74s, 340s; animation-delay: -44s,  -40s; }
-.art-tree     { top: -40%; width: 130px; height: 130px; animation-duration: 96s, 280s; animation-delay: -20s,  -20s; }
-.art-bigo     { top: -29%; width: 120px; height: 40px;  animation-duration: 66s, 360s; animation-delay: -52s,  -90s; }
-.art-list     { top: -18%; width: 170px; height: 64px;  animation-duration: 82s, 320s; animation-delay: -70s,  -40s; }
-.art-truth    { top: -7%;  width: 125px; height: 82px;  animation-duration: 78s, 300s; animation-delay: -12s,  -130s; }
-.art-binary   { top: 4%;   width: 190px; height: 45px;  animation-duration: 92s, 380s; animation-delay: -60s,  -70s; }
-.art-stack    { top: 15%;  width: 110px; height: 122px; animation-duration: 70s, 280s; animation-delay: -30s,  -10s; }
-.art-recur    { top: 26%;  width: 165px; height: 46px;  animation-duration: 84s, 340s; animation-delay: -78s,  -100s; }
-.art-while    { top: 37%;  width: 165px; height: 46px;  animation-duration: 72s, 300s; animation-delay: -18s,  -50s; }
-.art-sql      { top: 48%;  width: 230px; height: 46px;  animation-duration: 90s, 360s; animation-delay: -56s,  -20s; }
-.art-gates    { top: 59%;  width: 150px; height: 70px;  animation-duration: 76s, 320s; animation-delay: -40s,  -60s; }
-.art-git      { top: 70%;  width: 200px; height: 46px;  animation-duration: 68s, 300s; animation-delay: -8s,   -80s; }
-.art-search   { top: 81%;  width: 160px; height: 60px;  animation-duration: 86s, 340s; animation-delay: -64s,  -30s; }
-.art-exp      { top: 92%;  width: 110px; height: 42px;  animation-duration: 80s, 360s; animation-delay: -24s,  -110s; }
-.art-graph    { top: 103%; width: 140px; height: 127px; animation-duration: 94s, 300s; animation-delay: -48s,  -40s; }
-.art-guard    { top: 114%; width: 160px; height: 47px;  animation-duration: 70s, 320s; animation-delay: -14s,  -70s; }
-.art-flow     { top: 125%; width: 180px; height: 57px;  animation-duration: 88s, 340s; animation-delay: -58s,  -20s; }
+/* Each motif rides its own lane at 45 degrees, and every element is twice
+   the size it was. Equal vmax steps on both axes keep the angle exact, and
+   parallel lanes never cross, so two motifs cannot bunch up. */
+@keyframes art-lane {
+  from { translate: -50vmax -50vmax; }
+  to   { translate: 110vmax 110vmax; }
+}
+
+.bg-art__shape {
+  animation-name: art-lane, bg-turn;
+  animation-timing-function: linear, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* text stays upright: a rotating formula reads as noise */
+.bg-art__shape.art-text { animation-name: art-lane; }
+
+.art-demorgan  { top: -246%; width: 440px; height: 96px; animation-duration: 88s, 300s; animation-delay: -6s, 0s; }
+.art-main      { top: -226%; width: 520px; height: 94px; animation-duration: 74s, 340s; animation-delay: -44s, -40s; }
+.art-tree      { top: -206%; width: 260px; height: 260px; animation-duration: 96s, 280s; animation-delay: -20s, -20s; }
+.art-bigo      { top: -186%; width: 240px; height: 80px; animation-duration: 66s, 360s; animation-delay: -52s, -90s; }
+.art-list      { top: -166%; width: 340px; height: 128px; animation-duration: 82s, 320s; animation-delay: -70s, -40s; }
+.art-truth     { top: -146%; width: 250px; height: 164px; animation-duration: 78s, 300s; animation-delay: -12s, -130s; }
+.art-binary    { top: -126%; width: 380px; height: 90px; animation-duration: 92s, 380s; animation-delay: -60s, -70s; }
+.art-stack     { top: -106%; width: 220px; height: 244px; animation-duration: 70s, 280s; animation-delay: -30s, -10s; }
+.art-recur     { top: -86%; width: 330px; height: 92px; animation-duration: 84s, 340s; animation-delay: -78s, -100s; }
+.art-while     { top: -66%; width: 330px; height: 92px; animation-duration: 72s, 300s; animation-delay: -18s, -50s; }
+.art-sql       { top: -46%; width: 460px; height: 92px; animation-duration: 90s, 360s; animation-delay: -56s, -20s; }
+.art-gates     { top: -26%; width: 300px; height: 140px; animation-duration: 76s, 320s; animation-delay: -40s, -60s; }
+.art-git       { top: -6%; width: 400px; height: 92px; animation-duration: 68s, 300s; animation-delay: -8s, -80s; }
+.art-search    { top: 14%; width: 320px; height: 120px; animation-duration: 86s, 340s; animation-delay: -64s, -30s; }
+.art-exp       { top: 34%; width: 220px; height: 84px; animation-duration: 80s, 360s; animation-delay: -24s, -110s; }
+.art-graph     { top: 54%; width: 280px; height: 254px; animation-duration: 94s, 300s; animation-delay: -48s, -40s; }
+.art-guard     { top: 74%; width: 320px; height: 94px; animation-duration: 70s, 320s; animation-delay: -14s, -70s; }
+.art-flow      { top: 94%; width: 360px; height: 114px; animation-duration: 88s, 340s; animation-delay: -58s, -20s; }
 
 @media (max-width: 899px) {
-  .bg-art__shape.art-text { opacity: 0.12; }
+  .bg-art__shape.art-text { opacity: 0.1; }
   .art-truth, .art-stack, .art-recur, .art-gates, .art-graph,
   .art-search, .art-flow, .art-sql, .art-git { display: none; }
-  /* nine lanes on a phone, re-spaced to fill the height evenly */
-  .art-demorgan { top: -40%; width: 170px; height: 37px; }
-  .art-main     { top: -28%; width: 200px; height: 36px; }
-  .art-tree     { top: -16%; width: 100px; height: 100px; }
-  .art-bigo     { top: -4%;  width: 100px; height: 33px; }
-  .art-list     { top: 8%;   width: 130px; height: 49px; }
-  .art-binary   { top: 20%;  width: 150px; height: 36px; }
-  .art-while    { top: 32%;  width: 130px; height: 36px; }
-  .art-exp      { top: 44%;  width: 90px;  height: 34px; }
-  .art-guard    { top: 56%;  width: 130px; height: 38px; }
+  /* nine lanes on a phone, each element at half the desktop size */
+  .art-demorgan { top: -246%; width: 220px; height: 48px; }
+  .art-main     { top: -203%; width: 260px; height: 47px; }
+  .art-tree     { top: -160%; width: 130px; height: 130px; }
+  .art-bigo     { top: -117%; width: 120px; height: 40px; }
+  .art-list     { top: -74%;  width: 170px; height: 64px; }
+  .art-binary   { top: -31%;  width: 190px; height: 45px; }
+  .art-while    { top: 12%;   width: 165px; height: 46px; }
+  .art-exp      { top: 55%;   width: 110px; height: 42px; }
+  .art-guard    { top: 98%;   width: 160px; height: 47px; }
   .art-main     { width: 240px; height: 43px; }
   .art-binary   { width: 180px; height: 43px; }
   .art-list     { width: 160px; height: 60px; }
