@@ -215,12 +215,12 @@
       { slot: "I · 10–11", subject: "Engg. Physics", who: "Dr. Anjita Srivastava" },
       { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
       { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
-      { slot: "IV–V · 2–4", subject: "CCP Lab (B2)", who: "Dr. Satendra Upadhyay · Mech. Dept.", lab: true }
+      { slot: "IV–V · 2–4", subject: "CAD Lab (B2) · CCP Lab (B1)", who: "Dr. Satendra Upadhyay · Er. B. B. Niranjan", lab: true }
     ],
     Fri: [
       { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
       { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
-      { slot: "IV–V · 2–4", subject: "CCP Lab (B1)", who: "Er. B. B. Niranjan · Lab 1", lab: true }
+      { slot: "IV–V · 2–4", subject: "CCP Lab", who: "Er. B. B. Niranjan · Lab 1 · both batches", lab: true }
     ],
     Sat: [
       { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },

@@ -109,21 +109,36 @@
         <div class="att-summary" data-summary aria-live="polite"></div>
       </div>
 
-      <div class="att-grid reveal" data-subjects></div>
-
       <div class="panel reveal" style="margin-top:16px">
         <div class="panel__head">
-          <h3>Mark the days</h3>
-          <span class="panel__note att-hint">tap a class: blank → present → absent</span>
+          <h3>Pick a day</h3>
+          <span class="att-hint">tap a date to mark its classes</span>
         </div>
-        <div class="att-days" data-days></div>
-        <div class="cta-row">
-          <button class="btn btn--ghost btn--sm" type="button" data-clear>Clear this month</button>
-          <span class="cta-row__note">Clears only the marks for the month shown above.</span>
+        <div class="att-cal" data-calendar></div>
+        <div class="att-legend">
+          <span><i class="att-key is-all-present"></i> all attended</span>
+          <span><i class="att-key is-partial"></i> partly marked</span>
+          <span><i class="att-key is-all-absent"></i> all missed</span>
+          <span><i class="att-key is-none"></i> unmarked</span>
         </div>
+      </div>
+
+      <div class="att-grid reveal" data-subjects></div>
+
+      <div class="cta-row" style="margin-top:18px">
+        <button class="btn btn--ghost btn--sm" type="button" data-clear>Clear this month</button>
+        <span class="cta-row__note">Clears only the marks for the month shown above.</span>
       </div>
     </section>
   </div>
+  <dialog class="att-modal" data-modal aria-labelledby="att-modal-title">
+    <div class="att-modal__head">
+      <h3 id="att-modal-title" data-modal-title>—</h3>
+      <button type="button" class="att-modal__close" data-modal-close aria-label="Close">&#10005;</button>
+    </div>
+    <p class="att-modal__hint">Tap a class: blank → present → absent</p>
+    <div class="att-modal__body" data-modal-body></div>
+  </dialog>
 </main>
 
 <footer class="site-footer">

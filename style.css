@@ -3236,64 +3236,201 @@ td.is-lab::before { font-weight: 600; }
   color: var(--muted);
 }
 
-/* --- the day list ------------------------------------------------------ */
-.att-days { display: grid; gap: 1px; }
-
-.att-day {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 12px;
-  align-items: start;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
+/* --- the tracker wears the same glass as the floating buttons ---------- */
+.fab-attendance,
+.att-nav,
+.att-batch,
+.att-card,
+.att-cal__day,
+.att-chip,
+.att-modal {
+  background-color: var(--liquid-fill-2);
+  background-image:
+    radial-gradient(120% 90% at 30% -10%, var(--liquid-spec) 0%, transparent 55%),
+    linear-gradient(158deg, var(--liquid-fill-1), var(--liquid-fill-2));
+  border: 1px solid var(--liquid-edge);
+  box-shadow:
+    0 12px 24px -14px rgba(20, 18, 16, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-.att-day:last-child { border-bottom: 0; }
+.fab-attendance { border-radius: 50%; }
+.att-nav { border-radius: 999px; }
+.att-batch { border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); }
 
-.att-day__date {
+.fab-attendance.is-current {
+  background-image: linear-gradient(160deg, #ffb066, var(--accent));
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #2c1200;
+}
+
+.att-batch button.is-on {
+  background: var(--ink);
+  color: var(--paper-2);
+  box-shadow: none;
+}
+
+/* --- the calendar ------------------------------------------------------ */
+.att-cal {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 520px;
+}
+
+.att-cal__head {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.att-cal__pad { display: block; }
+
+.att-cal__day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 1px;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  border-radius: 12px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease;
+}
+
+.att-cal__day:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--accent); }
+
+.att-cal__day:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background-image: none;
+  box-shadow: none;
+}
+
+.att-cal__num {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.att-cal__count {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.att-cal__day.is-today { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.att-cal__day.is-all-present { background-image: linear-gradient(160deg, #ffd7a8, var(--accent)); color: #2c1200; }
+.att-cal__day.is-all-present .att-cal__count { color: #4a2200; }
+.att-cal__day.is-all-absent { background-image: linear-gradient(160deg, #e8e2d6, #cfc7b8); color: #4a4235; }
+.att-cal__day.is-partial { background-image: linear-gradient(160deg, #ffe9cc, #ffc887); color: #3a1c00; }
+
+[data-theme="dark"] .att-cal__day.is-all-absent { background-image: linear-gradient(160deg, #3a352c, #26221b); color: var(--ink-2); }
+
+.att-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
-  display: grid;
-  gap: 1px;
 }
 
-.att-day__date b {
-  font-size: 17px;
-  letter-spacing: -0.02em;
+.att-legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+.att-key { width: 9px; height: 9px; border-radius: 3px; border: 1px solid var(--line-strong); }
+.att-key.is-all-present { background: var(--accent); border-color: var(--accent); }
+.att-key.is-partial { background: #ffc887; border-color: #ffc887; }
+.att-key.is-all-absent { background: #cfc7b8; border-color: #cfc7b8; }
+
+/* --- the popup --------------------------------------------------------- */
+.att-modal {
+  width: min(420px, calc(100vw - 32px));
+  padding: 20px;
+  border-radius: var(--radius-lg);
   color: var(--ink);
 }
 
-.att-day__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-modal::backdrop { background: rgba(20, 18, 16, 0.35); }
 
-.att-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 11px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink-2);
-  font-size: 12px;
-  cursor: pointer;
-  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+.att-modal__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
 }
 
-.att-chip__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.att-modal__head h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.att-modal__sub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.att-modal__close {
   border: 1px solid var(--line-strong);
   background: transparent;
+  color: var(--ink);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
 }
 
-.att-chip:hover { border-color: var(--accent); }
+.att-modal__hint {
+  margin: 12px 0 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
+.att-modal__body { display: grid; gap: 8px; }
+
+.att-chip--wide {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.att-chip__text { display: grid; gap: 1px; text-align: left; }
+.att-chip__text b { font-weight: 600; font-size: 13px; }
+
+.att-chip__slot {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* --- chip states ------------------------------------------------------- */
 .att-chip.is-present {
-  background: var(--accent-soft);
+  background-color: var(--accent-soft);
+  background-image: linear-gradient(160deg, #ffe2c0, var(--accent-soft));
   border-color: var(--accent);
   color: var(--accent-ink);
 }
@@ -3301,16 +3438,16 @@ td.is-lab::before { font-weight: 600; }
 .att-chip.is-present .att-chip__dot { background: var(--accent); border-color: var(--accent); }
 
 .att-chip.is-absent {
-  background: transparent;
+  background-color: transparent;
+  background-image: none;
   border-color: var(--line-strong);
   color: var(--muted);
-  text-decoration: line-through;
 }
 
+.att-chip.is-absent .att-chip__text b { text-decoration: line-through; }
 .att-chip.is-absent .att-chip__dot { background: var(--muted); border-color: var(--muted); }
 
-.att-hint { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; }
-
-[data-theme="dark"] .att-chip.is-present { background: rgba(255, 153, 51, 0.16); }
-[data-theme="dark"] .att-batch { background: rgba(255, 255, 255, 0.04); }
-[data-theme="dark"] .att-batch button.is-on { background: var(--accent); color: #2c1200; }
+[data-theme="dark"] .att-chip.is-present {
+  background-image: linear-gradient(160deg, rgba(255, 176, 102, 0.28), rgba(255, 153, 51, 0.16));
+  color: #ffd7a8;
+}
