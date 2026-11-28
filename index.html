@@ -368,53 +368,46 @@
         <span class="eyebrow">04 — Feedback</span>
         <h2>Tell us what's <em>missing</em>.</h2>
         <p class="lead">
-          This site is only as good as what you send in. A paper, a correction, a page you want
-          built — write it below.
+          One form for everything: a paper that should be there, a timetable that has changed, a
+          photo that belongs in Moments, or a page you wish existed.
         </p>
       </div>
 
-      <div class="feedback-panel reveal">
-        <form class="form" action="mailto:kradam2557@gmail.com" method="post" enctype="text/plain" data-mail-form>
-          <div class="field-row">
-            <div class="field">
-              <label for="fb-name">Your name</label>
-              <input id="fb-name" name="name" type="text" placeholder="Name, or leave it blank" autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="fb-topic">Topic</label>
-              <select id="fb-topic" name="topic">
-                <option>Missing resource</option>
-                <option>Wrong information</option>
-                <option>Site idea</option>
-                <option>Something else</option>
-              </select>
-            </div>
-          </div>
+      <div class="panel reveal">
+        <div class="panel__head">
+          <h3>The feedback form</h3>
+        </div>
 
-          <div class="field field--grow">
-            <label for="fb-message">Message</label>
-            <textarea id="fb-message" name="message" rows="4" required placeholder="What should we fix, add or remove?"></textarea>
-          </div>
+        <p class="body-copy">
+          It opens in a new tab. No sign-in, and the name field is optional — send it anonymously if
+          you would rather, it still gets read.
+        </p>
 
-          <div class="form__foot">
-            <button class="btn btn--accent" type="submit">
-              Send message
-              <span class="arrow" aria-hidden="true">→</span>
-            </button>
-            <p class="form__hint">Opens your email app with the message ready to send to kradam2557@gmail.com.</p>
-          </div>
-        </form>
+        <div class="cta-row">
+          <a class="btn btn--accent" href="https://forms.gle/D4sn3pjMQY5LQmaW8" target="_blank" rel="noopener">
+            Open the feedback form
+            <span class="arrow" aria-hidden="true">&#8599;</span>
+          </a>
+          <span class="cta-row__note">Responses land in a spreadsheet the CR checks every Sunday.</span>
+        </div>
 
-        <aside class="feedback-aside">
-          <h3>Good feedback looks like</h3>
-          <ul class="checklist">
-            <li>Naming the semester and subject.</li>
-            <li>Pasting the correct link or paper if you have it.</li>
-            <li>One message per topic — easier to track.</li>
-          </ul>
-          <a class="btn btn--ghost btn--sm" href="feedback.html">Open the full form</a>
-        </aside>
+        <p class="panel__foot">
+          Sending a file? Paste a Drive link set to "anyone with the link". Private links cannot be
+          opened, so the request just sits there.
+        </p>
       </div>
+
+      <div class="panel reveal" style="margin-top:14px">
+        <div class="panel__head">
+          <h3>Good feedback looks like</h3>
+        </div>
+        <ul class="checklist">
+          <li>Name the page, then say what is wrong: "Resources, the 2nd semester folder is empty."</li>
+          <li>One topic per message, so it can be acted on and ticked off.</li>
+          <li>A link beats a description when you are sending a paper or a book.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
