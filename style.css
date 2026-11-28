@@ -3488,24 +3488,21 @@ td.is-lab::before { font-weight: 600; }
   background-image: linear-gradient(160deg, rgba(255, 176, 102, 0.28), rgba(255, 153, 51, 0.16));
   color: #ffd7a8;
 }
-/* --- the calendar days read as buttons on the light theme --------------- */
-[data-theme="light"] .att-cal__day {
-  border-color: rgba(20, 18, 16, 0.34);
+/* --- the floating calendar button carries a dark edge in the light theme -- */
+[data-theme="light"] .fab-attendance {
+  border: 1.5px solid rgba(20, 18, 16, 0.55);
   box-shadow:
-    0 1px 2px rgba(20, 18, 16, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 10px 22px -14px rgba(20, 18, 16, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
-[data-theme="light"] .att-cal__day:hover:not(:disabled) { border-color: var(--ink); }
-
-[data-theme="light"] .att-cal__day.is-today {
+[data-theme="light"] .fab-attendance:hover {
   border-color: var(--ink);
-  box-shadow: inset 0 0 0 1px var(--ink), 0 2px 6px -2px rgba(20, 18, 16, 0.2);
+  box-shadow:
+    0 14px 26px -14px rgba(20, 18, 16, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-[data-theme="light"] .att-cal__day.is-all-present,
-[data-theme="light"] .att-cal__day.is-partial {
-  border-color: rgba(20, 18, 16, 0.45);
+[data-theme="light"] .fab-attendance.is-current {
+  border-color: var(--ink);
 }
-
-[data-theme="dark"] .att-cal__day { border-color: var(--liquid-edge); }
