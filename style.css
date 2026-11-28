@@ -2961,21 +2961,20 @@ td.is-lab::before { font-weight: 600; }
 /* --- the hairline becomes a neon sweep, cycling through the flag -------- */
 .site-header::after,
 .site-footer::before {
-  /* the full range, black through the spectrum to white and back */
+  /* hues only: no black, no white, and the ends match so the loop is seamless */
   background: linear-gradient(90deg,
-    rgb(0, 0, 0) 0%,
-    rgb(18, 10, 5) 6%,
-    rgb(255, 85, 0) 14%,
-    rgb(255, 208, 0) 22%,
-    rgb(156, 255, 122) 30%,
-    rgb(0, 212, 255) 38%,
-    rgb(106, 76, 255) 46%,
-    rgb(255, 79, 163) 54%,
-    rgb(255, 255, 255) 64%,
-    rgb(217, 217, 217) 72%,
-    rgb(122, 122, 122) 80%,
-    rgb(26, 26, 26) 90%,
-    rgb(0, 0, 0) 100%);
+    rgb(255, 85, 0) 0%,
+    rgb(255, 208, 0) 9%,
+    rgb(156, 255, 60) 18%,
+    rgb(0, 212, 120) 27%,
+    rgb(0, 200, 255) 36%,
+    rgb(70, 120, 255) 45%,
+    rgb(140, 80, 255) 54%,
+    rgb(230, 60, 220) 63%,
+    rgb(255, 60, 140) 72%,
+    rgb(255, 90, 40) 81%,
+    rgb(255, 150, 0) 90%,
+    rgb(255, 85, 0) 100%);
   background-size: 300% 100%;
   animation: neon-sweep 12s linear infinite;
   box-shadow:
@@ -3017,10 +3016,12 @@ td.is-lab::before { font-weight: 600; }
 /* formulas sit a little stronger than the line art so they can be read */
 .bg-art__shape.art-text { opacity: 0.12; }
 
-/* one lane each: a motif can never meet another, and the gaps stay even */
+/* Each motif rides its own lane at 45 degrees. Equal vmax steps on both axes
+   keep the angle exact, and parallel lanes never cross, so two motifs cannot
+   bunch up no matter where they are in their cycle. */
 @keyframes art-lane {
-  from { translate: -38vw 0; }
-  to   { translate: 118vw 0; }
+  from { translate: -34vmax -34vmax; }
+  to   { translate: 66vmax 66vmax; }
 }
 
 .bg-art__shape {
@@ -3032,26 +3033,39 @@ td.is-lab::before { font-weight: 600; }
 /* text stays upright: a rotating formula reads as noise */
 .bg-art__shape.art-text { animation-name: art-lane; }
 
-.art-demorgan { top: 3%;  width: 300px; height: 65px;  animation-duration: 168s, 420s; animation-delay: -12s, 0s; }
-.art-main     { top: 14%; width: 380px; height: 68px;  animation-duration: 196s, 380s; animation-delay: -84s, -60s; }
-.art-tree     { top: 24%; width: 190px; height: 190px; animation-duration: 132s, 300s; animation-delay: -30s, -20s; }
-.art-bigo     { top: 36%; width: 165px; height: 55px;  animation-duration: 150s, 460s; animation-delay: -60s, -90s; }
-.art-list     { top: 46%; width: 240px; height: 90px;  animation-duration: 176s, 340s; animation-delay: -110s, -40s; }
-.art-truth    { top: 57%; width: 175px; height: 114px; animation-duration: 144s, 400s; animation-delay: -20s, -130s; }
-.art-binary   { top: 68%; width: 265px; height: 63px;  animation-duration: 210s, 520s; animation-delay: -150s, -70s; }
-.art-stack    { top: 78%; width: 155px; height: 170px; animation-duration: 158s, 360s; animation-delay: -95s, -10s; }
-.art-recur    { top: 88%; width: 230px; height: 64px;  animation-duration: 186s, 440s; animation-delay: -40s, -100s; }
+.art-demorgan { top: -62%; width: 220px; height: 48px;  animation-duration: 88s, 300s; animation-delay: -6s,   0s; }
+.art-main     { top: -51%; width: 260px; height: 47px;  animation-duration: 74s, 340s; animation-delay: -44s,  -40s; }
+.art-tree     { top: -40%; width: 130px; height: 130px; animation-duration: 96s, 280s; animation-delay: -20s,  -20s; }
+.art-bigo     { top: -29%; width: 120px; height: 40px;  animation-duration: 66s, 360s; animation-delay: -52s,  -90s; }
+.art-list     { top: -18%; width: 170px; height: 64px;  animation-duration: 82s, 320s; animation-delay: -70s,  -40s; }
+.art-truth    { top: -7%;  width: 125px; height: 82px;  animation-duration: 78s, 300s; animation-delay: -12s,  -130s; }
+.art-binary   { top: 4%;   width: 190px; height: 45px;  animation-duration: 92s, 380s; animation-delay: -60s,  -70s; }
+.art-stack    { top: 15%;  width: 110px; height: 122px; animation-duration: 70s, 280s; animation-delay: -30s,  -10s; }
+.art-recur    { top: 26%;  width: 165px; height: 46px;  animation-duration: 84s, 340s; animation-delay: -78s,  -100s; }
+.art-while    { top: 37%;  width: 165px; height: 46px;  animation-duration: 72s, 300s; animation-delay: -18s,  -50s; }
+.art-sql      { top: 48%;  width: 230px; height: 46px;  animation-duration: 90s, 360s; animation-delay: -56s,  -20s; }
+.art-gates    { top: 59%;  width: 150px; height: 70px;  animation-duration: 76s, 320s; animation-delay: -40s,  -60s; }
+.art-git      { top: 70%;  width: 200px; height: 46px;  animation-duration: 68s, 300s; animation-delay: -8s,   -80s; }
+.art-search   { top: 81%;  width: 160px; height: 60px;  animation-duration: 86s, 340s; animation-delay: -64s,  -30s; }
+.art-exp      { top: 92%;  width: 110px; height: 42px;  animation-duration: 80s, 360s; animation-delay: -24s,  -110s; }
+.art-graph    { top: 103%; width: 140px; height: 127px; animation-duration: 94s, 300s; animation-delay: -48s,  -40s; }
+.art-guard    { top: 114%; width: 160px; height: 47px;  animation-duration: 70s, 320s; animation-delay: -14s,  -70s; }
+.art-flow     { top: 125%; width: 180px; height: 57px;  animation-duration: 88s, 340s; animation-delay: -58s,  -20s; }
 
 @media (max-width: 899px) {
   .bg-art__shape.art-text { opacity: 0.12; }
-  .art-truth, .art-stack, .art-recur { display: none; }
-  /* six lanes, re-spaced to fill the height evenly */
-  .art-demorgan { top: 4%;  width: 200px; height: 43px; }
-  .art-main     { top: 20%; }
-  .art-tree     { top: 36%; }
-  .art-bigo     { top: 55%; }
-  .art-list     { top: 70%; }
-  .art-binary   { top: 86%; }
+  .art-truth, .art-stack, .art-recur, .art-gates, .art-graph,
+  .art-search, .art-flow, .art-sql, .art-git { display: none; }
+  /* nine lanes on a phone, re-spaced to fill the height evenly */
+  .art-demorgan { top: -40%; width: 170px; height: 37px; }
+  .art-main     { top: -28%; width: 200px; height: 36px; }
+  .art-tree     { top: -16%; width: 100px; height: 100px; }
+  .art-bigo     { top: -4%;  width: 100px; height: 33px; }
+  .art-list     { top: 8%;   width: 130px; height: 49px; }
+  .art-binary   { top: 20%;  width: 150px; height: 36px; }
+  .art-while    { top: 32%;  width: 130px; height: 36px; }
+  .art-exp      { top: 44%;  width: 90px;  height: 34px; }
+  .art-guard    { top: 56%;  width: 130px; height: 38px; }
   .art-main     { width: 240px; height: 43px; }
   .art-binary   { width: 180px; height: 43px; }
   .art-list     { width: 160px; height: 60px; }
