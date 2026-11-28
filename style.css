@@ -3537,20 +3537,33 @@ td.is-lab::before { font-weight: 600; }
 
 [data-theme="dark"] .exam-table tbody tr.is-next td { background-color: rgba(255, 153, 51, 0.14); }
 /* the sheet is two short columns, not a full-width table */
-.exam-table { width: auto; table-layout: auto; }
+/* inline-table shrinks to its content instead of filling the panel, and the
+   560px min-width that the timetable needs does not apply here */
+.exam-table {
+  display: inline-table;
+  width: auto;
+  min-width: 0;
+  table-layout: auto;
+}
 
 .exam-table th:first-child,
 .exam-table td:first-child { width: 132px; }
 
+/* the paper column takes exactly the width of the longest title */
+/* no width here: a percentage on a cell would make the table fill its
+   container. nowrap alone gives the column exactly its content width. */
 .exam-table th:nth-child(2),
-.exam-table td:nth-child(2) { width: 210px; }
+.exam-table td:nth-child(2) { white-space: nowrap; }
 
 @media (max-width: 700px) {
+  .exam-table { display: table; width: 100%; }
+
   .exam-table th:first-child,
   .exam-table td:first-child { width: 104px; }
 
+  /* a phone has no room for one long line, so let it wrap there */
   .exam-table th:nth-child(2),
-  .exam-table td:nth-child(2) { width: auto; }
+  .exam-table td:nth-child(2) { width: auto; white-space: normal; }
 }
 
 /* the time reads like the DATESHEET label, not like a tag */
