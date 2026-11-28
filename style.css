@@ -3239,11 +3239,10 @@ td.is-lab::before { font-weight: 600; }
 /* --- the tracker wears the same glass as the floating buttons ---------- */
 .fab-attendance,
 .att-nav,
-.att-batch,
+.att-batch-btn,
 .att-card,
 .att-cal__day,
-.att-chip,
-.att-modal {
+.att-chip {
   background-color: var(--liquid-fill-2);
   background-image:
     radial-gradient(120% 90% at 30% -10%, var(--liquid-spec) 0%, transparent 55%),
@@ -3256,7 +3255,29 @@ td.is-lab::before { font-weight: 600; }
 
 .fab-attendance { border-radius: 50%; }
 .att-nav { border-radius: 999px; }
-.att-batch { border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+.att-batch-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.att-batch-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+.att-batch-btn b {
+  font-size: 12.5px;
+  color: var(--accent-ink);
+  letter-spacing: 0.02em;
+}
 
 .fab-attendance.is-current {
   background-image: linear-gradient(160deg, #ffb066, var(--accent));
@@ -3269,6 +3290,22 @@ td.is-lab::before { font-weight: 600; }
   color: var(--paper-2);
   box-shadow: none;
 }
+
+/* the popup is solid: you should not read the page through it */
+.att-modal {
+  background-color: var(--paper-2);
+  background-image: none;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 30px 70px -28px rgba(20, 18, 16, 0.6);
+}
+
+[data-theme="dark"] .att-modal {
+  background-color: #221e17;
+  border-color: var(--line-strong);
+  box-shadow: 0 30px 70px -24px rgba(0, 0, 0, 0.85);
+}
+
+.att-modal::backdrop { background: rgba(20, 18, 16, 0.45); }
 
 /* --- the calendar ------------------------------------------------------ */
 .att-cal {

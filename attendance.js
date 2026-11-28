@@ -104,7 +104,8 @@
     summary: document.querySelector("[data-summary]"),
     subjects: document.querySelector("[data-subjects]"),
     cal: document.querySelector("[data-calendar]"),
-    batch: document.querySelectorAll("[data-batch]"),
+    batchBtn: document.querySelector("[data-batch-btn]"),
+    batchName: document.querySelector("[data-batch-name]"),
     prev: document.querySelector("[data-prev]"),
     next: document.querySelector("[data-next]"),
     clear: document.querySelector("[data-clear]"),
@@ -125,11 +126,11 @@
     names.forEach(function (n) { present += data.per[n].present; });
 
     el.month.textContent = cursor.toLocaleString("en-IN", { month: "long", year: "numeric" });
-    el.batch.forEach(function (b) {
-      var on = b.getAttribute("data-batch") === state.batch;
-      b.classList.toggle("is-on", on);
-      b.setAttribute("aria-pressed", on ? "true" : "false");
-    });
+    el.batchName.textContent = state.batch;
+    el.batchBtn.setAttribute("aria-pressed", "true");
+    el.batchBtn.setAttribute("aria-label",
+      "You are in batch " + state.batch + ". Tap to switch to " +
+      (state.batch === "B1" ? "B2" : "B1") + ".");
 
     el.summary.innerHTML =
       '<div class="att-figure"><span class="att-figure__num">' + present + "</span>" +
@@ -219,12 +220,10 @@
     render();
   });
 
-  el.batch.forEach(function (b) {
-    b.addEventListener("click", function () {
-      state.batch = b.getAttribute("data-batch");
-      save();
-      render();
-    });
+  el.batchBtn.addEventListener("click", function () {
+    state.batch = state.batch === "B1" ? "B2" : "B1";
+    save();                       /* the choice stays on this device */
+    render();
   });
 
   el.cal.addEventListener("click", function (event) {
