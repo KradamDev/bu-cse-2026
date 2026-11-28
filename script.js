@@ -159,6 +159,220 @@
     });
   }
 
+  /* --- Progressive photo wall -------------------------------------------- */
+  var wall = document.querySelector("[data-photo-wall]");
+  var moreBtn = document.querySelector("[data-load-more]");
+
+  if (wall && moreBtn) {
+    var wallItems = Array.prototype.slice.call(wall.querySelectorAll(".photo-wall__item"));
+    var STEP = 15;
+    var shown = Math.min(STEP, wallItems.length);
+
+    wallItems.forEach(function (item, i) {
+      if (i >= shown) item.classList.add("is-pending");
+    });
+
+    var moreWrap = moreBtn.parentElement;
+
+    function updateMore() {
+      var left = wallItems.length - shown;
+      if (left <= 0) {
+        moreBtn.hidden = true;
+        if (moreWrap) moreWrap.hidden = true;
+        return;
+      }
+      moreBtn.hidden = false;
+      if (moreWrap) moreWrap.hidden = false;
+      moreBtn.textContent = left > STEP
+        ? "Load " + STEP + " more photos"
+        : "Load the last " + left + (left === 1 ? " photo" : " photos");
+    }
+
+    moreBtn.addEventListener("click", function () {
+      var next = Math.min(shown + STEP, wallItems.length);
+      for (var i = shown; i < next; i++) wallItems[i].classList.remove("is-pending");
+      shown = next;
+      updateMore();
+    });
+
+    updateMore();
+  }
+
+  /* --- Timetable: today's classes and today's row ------------------------ */
+  var TIMETABLE = {
+    Mon: [
+      { slot: "I · 10–11", subject: "Environment & Ecology", who: "A. K. Giri" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "CCP Lab (B2) · Mechanics Lab (B1)", who: "Er. B. B. Niranjan · Er. Rajat Kushwaha", lab: true }
+    ],
+    Tue: [
+      { slot: "I · 10–11", subject: "Environment & Ecology", who: "A. K. Giri" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "Professional Communication Lab", who: "Dr. Manisha Jain · Communication Lab", lab: true }
+    ],
+    Wed: [
+      { slot: "I · 10–11", subject: "Engg. Physics", who: "Dr. Anjita Srivastava" },
+      { slot: "II · 11–12", subject: "Engg. Mathematics", who: "Mrs. Ritu Masandra" },
+      { slot: "III · 12–1", subject: "Professional Communication", who: "Dr. Manisha Jain" },
+      { slot: "IV–V · 2–4", subject: "Mechanics Lab (B2) · CAD Lab (B1)", who: "Er. Rajat Kushwaha · Dr. Satendra Upadhyay", lab: true }
+    ],
+    Thu: [
+      { slot: "I · 10–11", subject: "Engg. Physics", who: "Dr. Anjita Srivastava" },
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
+      { slot: "IV–V · 2–4", subject: "CAD Lab (B2) · CCP Lab (B1)", who: "Dr. Satendra Upadhyay · Er. B. B. Niranjan", lab: true }
+    ],
+    Fri: [
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" },
+      { slot: "IV–V · 2–4", subject: "CCP Lab", who: "Er. B. B. Niranjan · Lab 1 · both batches", lab: true }
+    ],
+    Sat: [
+      { slot: "II · 11–12", subject: "Engg. Mechanics", who: "Er. Rajat Kushwaha" },
+      { slot: "III · 12–1", subject: "CCP", who: "Er. B. B. Niranjan" }
+    ]
+  };
+
+  var DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var FULL_DAYS = {
+    Sun: "Sunday", Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday",
+    Thu: "Thursday", Fri: "Friday", Sat: "Saturday"
+  };
+  var todayKey = DAY_NAMES[new Date().getDay()];
+
+  /* home page: compact strip */
+  var strip = document.querySelector("[data-today-classes]");
+  if (strip) {
+    var dayLabel = strip.querySelector("[data-today-day]");
+    var dateLabel = strip.querySelector("[data-today-date]");
+    var list = strip.querySelector("[data-today-list]");
+    var entries = TIMETABLE[todayKey] || [];
+
+    if (dayLabel) dayLabel.textContent = FULL_DAYS[todayKey] || todayKey;
+    if (dateLabel) {
+      dateLabel.textContent = new Intl.DateTimeFormat("en-IN", {
+        day: "numeric", month: "long"
+      }).format(new Date());
+    }
+
+    if (list) {
+      if (!entries.length) {
+        var empty = document.createElement("li");
+        empty.className = "today-strip__empty";
+        empty.textContent = "No classes today. The full week is on the info page.";
+        list.appendChild(empty);
+        list.classList.add("is-empty");
+      } else {
+        entries.forEach(function (e) {
+          var li = document.createElement("li");
+          var slot = document.createElement("span");
+          slot.className = "slot";
+          slot.textContent = e.slot;
+          var subject = document.createElement("span");
+          subject.className = "subject";
+          subject.textContent = e.subject;
+          var who = document.createElement("span");
+          who.className = "who";
+          who.textContent = e.who;
+          li.appendChild(slot);
+          li.appendChild(subject);
+          li.appendChild(who);
+          list.appendChild(li);
+        });
+      }
+    }
+  }
+
+  /* info page: mark today's row */
+  var grid = document.querySelector(".timetable--grid");
+  if (grid && todayKey !== "Sun") {
+    Array.prototype.forEach.call(grid.querySelectorAll("tbody tr"), function (row) {
+      var head = row.querySelector('th[scope="row"]');
+      if (head && head.textContent.trim() === todayKey) {
+        row.classList.add("is-today");
+        head.setAttribute("aria-current", "date");
+      }
+    });
+  }
+
+  /* --- Theme toggle ------------------------------------------------------ */
+  var themeBtn = document.querySelector("[data-theme-toggle]");
+
+  function applyThemeLabel() {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (themeBtn) {
+      themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+  }
+
+  if (themeBtn) {
+    applyThemeLabel();
+    themeBtn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("bu-theme", next); } catch (e) {}
+      applyThemeLabel();
+    });
+  }
+
+  /* --- share the timetable with the attendance page ---------------------- */
+  window.BU_TIMETABLE = TIMETABLE;
+
+  /* --- Attendance button, fixed bottom left ------------------------------ */
+  var attBtn = document.createElement("a");
+  attBtn.className = "fab-attendance";
+  attBtn.href = "attendance.html";
+  attBtn.setAttribute("aria-label", "Attendance tracker");
+  attBtn.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>' +
+    '<path d="m8.5 15.5 2.2 2.2 4.3-4.6"/></svg>';
+  document.body.appendChild(attBtn);
+
+  if (location.pathname.indexOf("attendance") !== -1) attBtn.classList.add("is-current");
+
+  /* --- Back to top ------------------------------------------------------- */
+  var toTop = document.createElement("button");
+  toTop.type = "button";
+  toTop.className = "to-top";
+  toTop.setAttribute("aria-label", "Back to top");
+  toTop.innerHTML =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
+  document.body.appendChild(toTop);
+
+  function syncToTop() {
+    /* one class toggle; the browser already coalesces scroll events per frame */
+    toTop.classList.toggle("is-visible", window.scrollY > 400);
+  }
+  window.addEventListener("scroll", syncToTop, { passive: true });
+  window.addEventListener("resize", syncToTop);
+  syncToTop();
+
+  toTop.addEventListener("click", function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  /* --- Exams: mark the next paper ---------------------------------------- */
+  var examRows = Array.prototype.slice.call(document.querySelectorAll("[data-exam-date]"));
+  if (examRows.length) {
+    var midnight = new Date();
+    midnight.setHours(0, 0, 0, 0);
+    var nextRow = null;
+    examRows.forEach(function (row) {
+      row.classList.remove("is-next");
+      var when = new Date(row.getAttribute("data-exam-date") + "T00:00:00");
+      if (!nextRow && when >= midnight) nextRow = row;
+    });
+    if (nextRow) nextRow.classList.add("is-next");
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
