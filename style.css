@@ -3249,3 +3249,161 @@ body::after {
   color: var(--ink);
   border-color: rgba(160, 190, 230, 0.2);
 }
+
+/* ==========================================================================
+   DARK THEME: BHAGWA AND GREEN
+   The navy ground goes. Cards, bars and buttons now blend saffron into green
+   over a warm charcoal, so the flag reads in the surfaces themselves.
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --paper: #0e0b07;
+  --paper-2: #17120b;
+  --ink: #f6efe3;
+  --ink-2: #dccfbb;
+  --muted: #a89a86;
+  --line: #2b2418;
+  --line-strong: #3d3425;
+
+  --accent: #ff9933;
+  --accent-ink: #ffb566;
+  --accent-soft: #2c1d0c;
+  --green: #138808;
+  --green-ink: #5ccf5c;
+  --green-soft: #12260f;
+
+  /* glass: saffron at the top left, green at the bottom right */
+  --liquid-fill-1: rgba(255, 205, 150, 0.18);
+  --liquid-fill-2: rgba(30, 24, 14, 0.58);
+  --liquid-fill-3: rgba(19, 136, 8, 0.16);
+  --liquid-edge: rgba(255, 210, 160, 0.24);
+  --liquid-spec: rgba(255, 232, 200, 0.26);
+  --liquid-glow: rgba(19, 136, 8, 0.22);
+  --liquid-tint-strong: rgba(255, 210, 160, 0.1);
+  --liquid-tint-soft: rgba(255, 210, 160, 0.05);
+  --liquid-tint-hover: rgba(255, 210, 160, 0.13);
+  --liquid-scroll: rgba(255, 210, 160, 0.26);
+}
+
+/* --- the light the glass floats on -------------------------------------- */
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(40vmax 40vmax at 4% -2%, rgba(255, 153, 51, 0.32), transparent 60%),
+    radial-gradient(34vmax 34vmax at 96% 6%, rgba(255, 196, 130, 0.16), transparent 58%),
+    radial-gradient(48vmax 48vmax at 92% 96%, rgba(19, 136, 8, 0.36), transparent 62%),
+    radial-gradient(30vmax 30vmax at 6% 98%, rgba(19, 136, 8, 0.16), transparent 60%),
+    radial-gradient(26vmax 26vmax at 48% 44%, rgba(255, 170, 90, 0.08), transparent 64%);
+}
+
+[data-theme="dark"] body::before {
+  background-image:
+    linear-gradient(to right, rgba(255, 210, 160, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 210, 160, 0.06) 1px, transparent 1px);
+}
+
+/* --- every card carries the blend --------------------------------------- */
+[data-theme="dark"] .hero-card,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .inside-card,
+[data-theme="dark"] .file-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .feedback-aside,
+[data-theme="dark"] .portfolio-cta,
+[data-theme="dark"] .stub,
+[data-theme="dark"] .timetable--grid,
+[data-theme="dark"] .student-list {
+  background-color: rgba(28, 22, 13, 0.55);
+  background-image:
+    radial-gradient(120% 92% at 6% -12%, rgba(255, 214, 170, 0.2), transparent 48%),
+    linear-gradient(158deg,
+      rgba(255, 153, 51, 0.2) 0%,
+      rgba(26, 20, 12, 0.55) 44%,
+      rgba(19, 136, 8, 0.22) 100%);
+  border-color: rgba(255, 210, 160, 0.2);
+}
+
+/* the hero leans saffron, the footer leans green: the flag, spread out */
+[data-theme="dark"] .hero-card {
+  background-image:
+    radial-gradient(120% 92% at 6% -12%, rgba(255, 220, 180, 0.26), transparent 50%),
+    linear-gradient(158deg,
+      rgba(255, 153, 51, 0.28) 0%,
+      rgba(28, 22, 13, 0.5) 55%,
+      rgba(19, 136, 8, 0.14) 100%);
+}
+
+/* --- bars --------------------------------------------------------------- */
+[data-theme="dark"] .site-header {
+  background-color: rgba(14, 11, 7, 0.9);
+  background-image: linear-gradient(180deg, rgba(255, 153, 51, 0.12), transparent);
+}
+
+[data-theme="dark"] .bottom-nav {
+  background-color: rgba(14, 11, 7, 0.95);
+  background-image: linear-gradient(0deg, rgba(19, 136, 8, 0.14), transparent);
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: rgba(20, 16, 10, 0.92);
+  background-image: linear-gradient(180deg, rgba(19, 136, 8, 0.14), rgba(255, 153, 51, 0.05) 70%);
+}
+
+[data-theme="dark"] .marquee {
+  background-color: #120e08;
+  background-image: linear-gradient(90deg, rgba(255, 153, 51, 0.2), rgba(19, 136, 8, 0.2));
+}
+
+/* --- buttons: saffron to act, green to go ------------------------------ */
+[data-theme="dark"] .btn--accent {
+  background: linear-gradient(160deg, #ffc27a 0%, var(--saffron) 52%, #e87900 100%);
+  color: #2c1200;
+  border-color: rgba(255, 220, 180, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 14px 26px -16px rgba(255, 153, 51, 0.6);
+}
+
+[data-theme="dark"] .btn--ghost {
+  background-color: rgba(19, 136, 8, 0.18);
+  background-image: linear-gradient(158deg, rgba(19, 136, 8, 0.32), transparent 82%);
+  border-color: rgba(19, 136, 8, 0.55);
+  color: #cdf3c4;
+}
+
+[data-theme="dark"] .btn--ghost:hover {
+  background-color: rgba(19, 136, 8, 0.28);
+  border-color: #5ccf5c;
+  color: #ffffff;
+}
+
+/* --- table, chips, tiles ------------------------------------------------ */
+[data-theme="dark"] .timetable--grid thead th {
+  background-color: rgba(255, 210, 160, 0.1);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .timetable--grid tbody th { background-color: rgba(255, 210, 160, 0.05); }
+
+[data-theme="dark"] .timetable--grid tbody tr.is-today td { background-color: rgba(255, 153, 51, 0.2); }
+[data-theme="dark"] .timetable--grid tbody tr.is-today th[scope="row"] { background-color: rgba(255, 153, 51, 0.28); }
+[data-theme="dark"] td.is-lab { background-color: rgba(19, 136, 8, 0.2); }
+
+[data-theme="dark"] .photo-grid__item,
+[data-theme="dark"] .photo-wall__item {
+  background-color: rgba(255, 210, 160, 0.06);
+  border-color: rgba(255, 210, 160, 0.16);
+}
+
+[data-theme="dark"] .photo-grid__label,
+[data-theme="dark"] .photo-wall__label {
+  background: rgba(16, 12, 7, 0.92);
+  color: var(--ink);
+  border-color: rgba(255, 210, 160, 0.2);
+}
+
+[data-theme="dark"] .section-nav a {
+  background-color: rgba(28, 22, 13, 0.5);
+  background-image: linear-gradient(158deg, rgba(255, 210, 160, 0.12), rgba(19, 136, 8, 0.1));
+  border-color: rgba(255, 210, 160, 0.2);
+}
+
+[data-theme="dark"] :focus-visible { outline-color: var(--saffron); }
