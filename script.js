@@ -138,15 +138,44 @@
     var lbCap = lightbox.querySelector(".lightbox__caption");
     var lbClose = lightbox.querySelector(".lightbox__close");
 
+    /* The viewer takes the shape of the photo: a landscape picture gets a
+       landscape window, a portrait one gets a portrait window, and either
+       way it is capped to the screen. */
+    function fitViewer() {
+      if (!lbImg.naturalWidth || !lbImg.naturalHeight) return;
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var ratio = lbImg.naturalWidth / lbImg.naturalHeight;
+      var w = vw;
+      var h = Math.round(w / ratio);
+      if (h > vh) {
+        h = vh;
+        w = Math.round(h * ratio);
+      }
+      lightbox.style.width = w + "px";
+      lightbox.style.height = h + "px";
+    }
+
     tiles.forEach(function (tile) {
       tile.addEventListener("click", function () {
         var full = tile.getAttribute("data-full");
         var alt = tile.querySelector("img").getAttribute("alt");
+
         lbImg.setAttribute("src", full);
         lbImg.setAttribute("alt", alt);
         lbCap.textContent = tile.getAttribute("data-caption") || "";
+
         lightbox.showModal();
+        fitViewer();                       /* cached images are ready at once */
+
+        if (!lbImg.complete || !lbImg.naturalWidth) {
+          lbImg.addEventListener("load", fitViewer, { once: true });
+        }
       });
+    });
+
+    window.addEventListener("resize", function () {
+      if (lightbox.open) fitViewer();
     });
 
     lbClose.addEventListener("click", function () { lightbox.close(); });
