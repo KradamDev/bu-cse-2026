@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BU CSE 2026 — the batch site</title>
+<meta name="description" content="Everything for the B.Tech CSE batch of 2026 at Bundelkhand University — question papers, books, syllabus, timetable, student list, feedback and the fun stuff, in one place.">
+<meta name="theme-color" content="#f7f5f0">
+<meta property="og:title" content="BU CSE 2026 — the batch site">
+<meta property="og:description" content="Question papers, books, syllabus, timetable, student list, feedback and the fun stuff — one place for the CSE batch of 2026.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+<script>(function(){try{var t=localStorage.getItem("bu-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+<style>.reveal{opacity:1!important;transform:none!important}</style></head>
+<body>
+
+<div class="bg-art" aria-hidden="true">
+  <svg class="bg-art__shape bg-art__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94"/><circle cx="100" cy="100" r="58"/></svg>
+  <svg class="bg-art__shape bg-art__tri" viewBox="0 0 200 200"><path d="M100 18 182 174H18z"/><path d="M100 66v54M74 146h52"/></svg>
+  <svg class="bg-art__shape bg-art__plus" viewBox="0 0 200 200"><path d="M100 22v156M22 100h156"/></svg>
+  <svg class="bg-art__shape bg-art__arc" viewBox="0 0 200 200"><path d="M18 100a82 82 0 0 1 164 0"/><path d="M52 100a48 48 0 0 1 96 0"/></svg>
+  <svg class="bg-art__shape bg-art__square" viewBox="0 0 200 200"><rect x="32" y="32" width="136" height="136" rx="5"/><path d="M32 100h136M100 32v136"/></svg>
+  <svg class="bg-art__shape bg-art__hex" viewBox="0 0 200 200"><path d="M100 14 174 57v86L100 186 26 143V57z"/><circle cx="100" cy="100" r="30"/></svg>
+  <svg class="bg-art__shape bg-art__dots" viewBox="0 0 200 200"><path d="M20 40h160M20 80h160M20 120h160M20 160h160" stroke-dasharray="2 12"/></svg>
+  <svg class="bg-art__shape bg-art__wave" viewBox="0 0 200 200"><path d="M10 140q25-40 50 0t50 0 50 0"/><path d="M10 100q25-40 50 0t50 0 50 0"/><path d="M10 60q25-40 50 0t50 0 50 0"/></svg>
+  <svg class="bg-art__shape bg-art__cross" viewBox="0 0 200 200"><path d="M40 40 160 160M160 40 40 160"/></svg>
+</div>
+
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="BU CSE 2026 — home">
+      <span class="brand__mark" aria-hidden="true">26</span>
+      <span class="brand__text">
+        <span class="brand__name">BU CSE</span>
+        <span class="brand__sub">Batch of 2026</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="info.html">Info</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="fun.html">Moments</a>
+      <a href="about.html">About me</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+      <svg class="theme-toggle__sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="3.6"/><path d="M10 1.6v1.9M10 16.5v1.9M1.6 10h1.9M16.5 10h1.9M4.1 4.1l1.3 1.3M14.6 14.6l1.3 1.3M15.9 4.1l-1.3 1.3M5.4 14.6l-1.3 1.3"/>
+      </svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M16.2 12.6A6.8 6.8 0 0 1 7.4 3.8 7.2 7.2 0 1 0 16.2 12.6z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="reveal">
+        <span class="eyebrow eyebrow--accent">Bundelkhand University · B.Tech CSE</span>
+        <h1>
+          <span class="line">Four years.</span>
+          <span class="line">One batch.</span>
+          <span class="line">Making it <em>memorable.</em></span>
+        </h1>
+        <p class="hero__lead">
+          The unofficial home of BU CSE 2026. Question papers, books, the syllabus you keep
+          losing, the timetable that keeps changing, and the photos from the days that mattered —
+          all filed in one place, built by the CR.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#today">
+            See today's classes
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="resources.html">Open resources</a>
+        </div>
+
+      </div>
+
+      <div class="hero-aside">
+      <aside class="hero-card reveal" aria-label="Batch at a glance">
+        <div class="hero-card__uni">
+          <img class="hero-card__logo" src="assets/bu-logo.png" alt="Emblem of Bundelkhand University, Jhansi" width="311" height="310">
+          <span class="hero-card__uni-text">
+            <span class="hero-card__uni-name">Bundelkhand University</span>
+            <span class="hero-card__uni-place">Jhansi · Institute of Engineering &amp; Technology</span>
+          </span>
+        </div>
+
+        <div class="hero-card__top">
+          <div>
+            <div class="clock-line">
+              <div class="clock" id="clock">--:--</div>
+              <span class="clock__date" data-clock-date></span>
+            </div>
+            <span class="clock__zone" id="clock-zone">Campus time · IST</span>
+          </div>
+          <span class="badge-2026" aria-hidden="true">2026</span>
+        </div>
+
+        <div class="hero-card__stats">
+          <div class="stat">
+            <div class="stat__num">62</div>
+            <div class="stat__label">Students</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">8</div>
+            <div class="stat__label">Semesters</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">40+</div>
+            <div class="stat__label">Subjects</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">1</div>
+            <div class="stat__label">Batch</div>
+          </div>
+        </div>
+
+        <p class="hero-card__note">
+          Class strength from the official 1st year list, Semester I.
+        </p>
+      </aside>
+
+      <div class="hero__meta reveal">
+        <span>Computer Science &amp; Engineering</span>
+        <span>Semesters I–VIII</span>
+        <span>Est. 2026</span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Data Structures</span><span>Operating Systems</span><span>DBMS</span>
+        <span>Computer Networks</span><span>Machine Learning</span><span>Compiler Design</span>
+        <span>Discrete Maths</span><span>Web Technologies</span>
+      </div>
+      <div class="marquee__group">
+        <span>Data Structures</span><span>Operating Systems</span><span>DBMS</span>
+        <span>Computer Networks</span><span>Machine Learning</span><span>Compiler Design</span>
+        <span>Discrete Maths</span><span>Web Technologies</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= INFO PREVIEW ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">01 — Info</span>
+        <h2>What's <em>on today</em>.</h2>
+        <p class="lead">
+          Straight from the department sheet — today's periods, and the whole week on the info
+          page when you need it.
+        </p>
+      </div>
+
+      <div class="panel reveal" id="today">
+        <div class="panel__head">
+          <h3>Today's classes</h3>
+          <a class="panel__link" href="info.html#timetable">Full week →</a>
+        </div>
+
+        <div class="today-strip" data-today-classes>
+          <p class="today-strip__day"><b data-today-day>—</b> <span data-today-date></span></p>
+          <ul class="today-strip__list" data-today-list></ul>
+        </div>
+
+        <p class="panel__foot">
+          Sem I · Room T1 · Lunch 1:00–2:00 · Afternoon labs run 2:00–4:00, with the B1 and B2
+          batches listed together
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= STUDENTS ================= -->
+  <section class="section" id="students-preview">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">02 — Students</span>
+        <h2>All <em>62</em> of us.</h2>
+        <p class="lead">
+          The official first-year list, searchable by name or serial number. Both CRs are marked.
+        </p>
+      </div>
+
+      <div class="panel reveal">
+          <div class="panel__head">
+            <h3>Student list · 62</h3>
+            <a class="panel__link" href="info.html#students">Full page →</a>
+          </div>
+          <div data-student-block>
+          <div class="search-field">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <label for="student-search" class="sr-only" style="position:absolute;left:-9999px">Search the student list</label>
+            <input id="student-search" type="search" placeholder="Search by name, roll no. or CR" autocomplete="off" data-student-search>
+          </div>
+          <ul class="student-list" data-student-list>
+<li data-name="01 aadity kumar"><span class="roll">01</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Aadity Kumar</span></li>
+<li data-name="02 abhay kumar gupta"><span class="roll">02</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Abhay Kumar Gupta</span></li>
+<li data-name="03 abhishek upadhyay"><span class="roll">03</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Abhishek Upadhyay</span></li>
+<li data-name="04 abhishek yadav"><span class="roll">04</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Abhishek Yadav</span></li>
+<li data-name="05 aditi pandey"><span class="roll">05</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Aditi Pandey</span></li>
+<li data-name="06 aditya tripathi"><span class="roll">06</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Aditya Tripathi</span></li>
+<li data-name="07 akash chaudhary"><span class="roll">07</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Akash Chaudhary</span></li>
+<li data-name="08 aksa khan"><span class="roll">08</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Aksa Khan</span></li>
+<li data-name="09 ambika pal"><span class="roll">09</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ambika Pal</span></li>
+<li data-name="10 ansh raghuvanshi"><span class="roll">10</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ansh Raghuvanshi</span></li>
+<li data-name="11 anshika singh"><span class="roll">11</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Anshika Singh</span></li>
+<li data-name="12 arpit yadav"><span class="roll">12</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Arpit Yadav</span></li>
+<li data-name="13 arushi singh"><span class="roll">13</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Arushi Singh</span></li>
+<li data-name="14 aryan kumar"><span class="roll">14</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Aryan Kumar</span></li>
+<li data-name="15 ashwani"><span class="roll">15</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ashwani</span></li>
+<li data-name="16 avnish kumar bind"><span class="roll">16</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Avnish Kumar Bind</span></li>
+<li data-name="17 awanish kumar jaisaval"><span class="roll">17</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Awanish Kumar Jaisaval</span></li>
+<li data-name="18 ayush kumar"><span class="roll">18</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ayush Kumar</span></li>
+<li data-name="19 ayush kumar dinkar"><span class="roll">19</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ayush Kumar Dinkar</span></li>
+<li data-name="20 ayush kumar gupta"><span class="roll">20</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ayush Kumar Gupta</span></li>
+<li data-name="21 dhairya jain"><span class="roll">21</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Dhairya Jain</span></li>
+<li data-name="22 dhananjay kumar maurya"><span class="roll">22</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Dhananjay Kumar Maurya</span></li>
+<li data-name="23 dipika"><span class="roll">23</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Dipika</span></li>
+<li data-name="24 divyanshu verma"><span class="roll">24</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Divyanshu Verma</span></li>
+<li data-name="25 diwakar gupta"><span class="roll">25</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Diwakar Gupta</span></li>
+<li data-name="26 harshit shrivastav"><span class="roll">26</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Harshit Shrivastav</span></li>
+<li data-name="27 himanshu bharti"><span class="roll">27</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Himanshu Bharti</span></li>
+<li data-name="28 hrishikesh kumar bind"><span class="roll">28</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Hrishikesh Kumar Bind</span></li>
+<li data-name="29 kaushik singh chandel"><span class="roll">29</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Kaushik Singh Chandel</span></li>
+<li data-name="30 kradam dev"><span class="roll">30</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Kradam Dev<span class="badge-cr">Male CR</span></span></li>
+<li data-name="31 lalit singh"><span class="roll">31</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Lalit Singh</span></li>
+<li data-name="32 manas shukla"><span class="roll">32</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Manas Shukla</span></li>
+<li data-name="33 nilakshi singh"><span class="roll">33</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Nilakshi Singh</span></li>
+<li data-name="34 nitin kanaujiya"><span class="roll">34</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Nitin Kanaujiya</span></li>
+<li data-name="35 om savita"><span class="roll">35</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Om Savita</span></li>
+<li data-name="36 piyush kumar"><span class="roll">36</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Piyush Kumar</span></li>
+<li data-name="37 prashant singh"><span class="roll">37</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Prashant Singh</span></li>
+<li data-name="38 pratik kumar"><span class="roll">38</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Pratik Kumar</span></li>
+<li data-name="39 prem kumar"><span class="roll">39</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Prem Kumar</span></li>
+<li data-name="40 princi"><span class="roll">40</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Princi</span></li>
+<li data-name="41 priyanshu"><span class="roll">41</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Priyanshu</span></li>
+<li data-name="42 raj shrivas"><span class="roll">42</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Raj Shrivas</span></li>
+<li data-name="43 rajan singh"><span class="roll">43</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Rajan Singh</span></li>
+<li data-name="44 ravi kumar"><span class="roll">44</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Ravi Kumar</span></li>
+<li data-name="45 ritika yadav"><span class="roll">45</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Ritika Yadav</span></li>
+<li data-name="46 sahil"><span class="roll">46</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Sahil</span></li>
+<li data-name="47 sahu shivakant shrikrishna"><span class="roll">47</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Sahu Shivakant Shrikrishna</span></li>
+<li data-name="48 sakshi shukla"><span class="roll">48</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Sakshi Shukla<span class="badge-cr">Female CR</span></span></li>
+<li data-name="49 shelvi yadav"><span class="roll">49</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Shelvi Yadav</span></li>
+<li data-name="50 shivangi singh"><span class="roll">50</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Shivangi Singh</span></li>
+<li data-name="51 shivani singh"><span class="roll">51</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Shivani Singh</span></li>
+<li data-name="52 shivank kumar"><span class="roll">52</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Shivank Kumar</span></li>
+<li data-name="53 shreshth rai"><span class="roll">53</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Shreshth Rai</span></li>
+<li data-name="54 siddhant jain"><span class="roll">54</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Siddhant Jain</span></li>
+<li data-name="55 srishti keshari"><span class="roll">55</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Srishti Keshari</span></li>
+<li data-name="56 sunny yadav"><span class="roll">56</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Sunny Yadav</span></li>
+<li data-name="57 tanish prajapati"><span class="roll">57</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Tanish Prajapati</span></li>
+<li data-name="58 vaishnavi sharma"><span class="roll">58</span><span class="sname"><span class="gender gender--f" role="img" aria-label="Girl"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="4.6" r="2.9"/><path d="M6 7.5V11M4.3 9.4h3.4"/></svg></span>Vaishnavi Sharma</span></li>
+<li data-name="59 vipin kumar"><span class="roll">59</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Vipin Kumar</span></li>
+<li data-name="60 vishal gupta"><span class="roll">60</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Vishal Gupta</span></li>
+<li data-name="61 vivek pandey"><span class="roll">61</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Vivek Pandey</span></li>
+<li data-name="62 yash verma"><span class="roll">62</span><span class="sname"><span class="gender" role="img" aria-label="Boy"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="7" r="2.9"/><path d="M7.1 4.9 10.6 1.4M7.9 1.4h2.7v2.7"/></svg></span>Yash Verma</span></li>
+            <li class="student-list__empty" data-student-empty hidden>No match — check the spelling.</li>
+          </ul>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FUN PREVIEW ================= -->
+  <section class="section" id="fun-preview">
+    <div class="wrap">
+      <div class="section__head section__head--split reveal">
+        <div>
+          <span class="eyebrow">03 — Moments</span>
+          <h2>Proof that we <em>did</em> leave the lab.</h2>
+        </div>
+        <p class="lead">
+          Seven frames from the first semester — feast day, the batch photograph, a guest on
+          campus, Pandal duty, the canteen, one trip out, and the university function in
+          September. Tap any of them to see it full size.
+        </p>
+      </div>
+
+      <div class="photo-grid reveal">
+        <button class="photo-grid__item photo-grid__item--lead" type="button"
+          data-full="assets/photos/feast-day.jpg"
+          data-caption="Feast day — Plates, ties and the whole row of us on the lawn — first-year feast.">
+          <img src="assets/photos/feast-day.jpg" alt="Group of students in college uniform holding plates of food at a campus feast" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Feast day</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/batch-on-steps.jpg"
+          data-caption="The whole batch — All of us on the department steps, front row to back.">
+          <img src="assets/photos/batch-on-steps.jpg" alt="Large group photograph of the batch on the steps outside the department building" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">The whole batch</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/guest-visit.jpg"
+          data-caption="A guest on campus — Orange robes, sweets in hand, and a corridor full of us.">
+          <img src="assets/photos/guest-visit.jpg" alt="Students in uniform standing with a visiting monk in orange robes" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">A guest on campus</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/durga-puja.jpg"
+          data-caption="Pandal duty — Durga Puja on campus — the group that turned up to help set up.">
+          <img src="assets/photos/durga-puja.jpg" alt="Students standing in front of a decorated Durga Puja pandal with the idol on stage" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Pandal duty</span>
+        </button>
+        <button class="photo-grid__item photo-grid__item--desktop-only" type="button"
+          data-full="assets/photos/canteen-evening.jpg"
+          data-caption="Canteen, balloons up — Food counters, balloons and a table that stayed full.">
+          <img src="assets/photos/canteen-evening.jpg" alt="Students sitting around a canteen table during a celebration with balloons overhead" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Canteen, balloons up</span>
+        </button>
+        <button class="photo-grid__item" type="button"
+          data-full="assets/photos/hilltop.jpg"
+          data-caption="Pointing at the future — A trip out of campus, rocks, and somebody's idea of a pose.">
+          <img src="assets/photos/hilltop.jpg" alt="Group of students posing on rocks near a hilltop with trees behind them" loading="lazy" decoding="async" width="1200" height="900">
+          <span class="photo-grid__label">Pointing at the future</span>
+        </button>
+        <button class="photo-grid__item photo-grid__item--strip" type="button"
+          data-full="assets/photos/stage-function.jpg"
+          data-caption="On stage, 15 September 2026 — after the university function, in front of the screen.">
+          <img src="assets/photos/stage-function.jpg" alt="Students in uniform with a faculty member in a red sari on stage at a university function" loading="lazy" decoding="async" width="1500" height="1125">
+          <span class="photo-grid__label">On stage, 15 September 2026</span>
+        </button>
+      </div>
+
+      <div class="wall-foot reveal" style="margin-top:22px">
+        <p class="panel__foot" style="border-top:0;margin:0;padding:0">
+          Seven of thirty-seven — the rest, and every photo still to come, live on the Moments page.
+        </p>
+        <a class="btn btn--ghost btn--sm" href="fun.html">See all 37 photos <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEEDBACK ================= -->
+  <section class="section" id="feedback">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">04 — Feedback</span>
+        <h2>Tell us what's <em>missing</em>.</h2>
+        <p class="lead">
+          One form for everything: a paper that should be there, a timetable that has changed, a
+          photo that belongs in Moments, or a page you wish existed.
+        </p>
+      </div>
+
+      <div class="panel reveal">
+        <div class="panel__head">
+          <h3>The feedback form</h3>
+        </div>
+
+        <p class="body-copy">
+          It opens in a new tab. No sign-in, and the name field is optional — send it anonymously if
+          you would rather, it still gets read.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn--accent" href="https://forms.gle/D4sn3pjMQY5LQmaW8" target="_blank" rel="noopener">
+            Open the feedback form
+            <span class="arrow" aria-hidden="true">&#8599;</span>
+          </a>
+          <span class="cta-row__note">Responses land in a spreadsheet the CR checks every Sunday.</span>
+        </div>
+
+        <p class="panel__foot">
+          Sending a file? Paste a Drive link set to "anyone with the link". Private links cannot be
+          opened, so the request just sits there.
+        </p>
+      </div>
+
+      <div class="panel reveal" style="margin-top:14px">
+        <div class="panel__head">
+          <h3>Good feedback looks like</h3>
+        </div>
+        <ul class="checklist">
+          <li>Name the page, then say what is wrong: "Resources, the 2nd semester folder is empty."</li>
+          <li>One topic per message, so it can be acted on and ticked off.</li>
+          <li>A link beats a description when you are sending a paper or a book.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">05 — About me</span>
+        <h2>Built by the <em>CR</em>.</h2>
+      </div>
+
+      <div class="about-grid reveal" style="grid-template-columns:1fr">
+        <div class="about-card">
+          <div class="about-card__head">
+            <span class="avatar" aria-hidden="true">KD</span>
+            <div>
+              <div class="about-card__name">Kradam Dev</div>
+              <div class="about-card__role">Full-stack developer in the making</div>
+            </div>
+          </div>
+          <p>
+            I'm a student of the CSE batch of 2026 at Bundelkhand University and a self-taught
+            web developer — I started with HTML, CSS and JavaScript during the pandemic and have
+            been shipping small things for the web ever since. This site is one of them: plain
+            HTML, CSS and JavaScript, no framework, no build step.
+          </p>
+          <p>
+            I built it because the batch's material was scattered across drives, screenshots and
+            pinned messages. If you want a page added, the feedback form is the fastest route.
+          </p>
+
+          <dl class="facts">
+            <div><dt>University</dt><dd>Bundelkhand Univ.</dd></div>
+            <div><dt>Batch</dt><dd>CSE 2026</dd></div>
+            <div><dt>Focus</dt><dd>Full-stack</dd></div>
+            <div><dt>Building since</dt><dd>2020</dd></div>
+          </dl>
+
+          <div class="about-card__actions">
+            <a class="btn btn--accent btn--sm" href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">
+              View portfolio <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--ghost btn--sm" href="about.html">
+              About me <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>BU CSE <em style="font-style:italic;color:var(--accent)">2026</em></h2>
+        <p>The batch site for Computer Science &amp; Engineering, Bundelkhand University — kept alive by students.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="info.html">Info</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="fun.html">Moments</a></li>
+            <li><a href="about.html">About me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> BU CSE 2026 · Student-maintained</span>
+      <span>Built by <a href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">Kradam Dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="lightbox__close" type="button" aria-label="Close photo">×</button>
+  <img class="lightbox__img" src="" alt="">
+  <p class="lightbox__caption"></p>
+</dialog>
+
+<nav class="bottom-nav" aria-label="Primary, mobile">
+    <a href="index.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.4 10 4l7 6.4V17a1 1 0 0 1-1 1h-4v-5.2H8V18H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="resources.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.6A1.6 1.6 0 0 1 5.6 3H16v14H5.6A1.6 1.6 0 0 0 4 18.6z"/><path d="M4 4.6v14"/></svg>
+      <span>Resources</span>
+    </a>
+    <a href="info.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.4"/><path d="M10 9.2v5"/><path d="M10 6.4h.01"/></svg>
+      <span>Info</span>
+    </a>
+    <a href="feedback.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 12.4a2 2 0 0 1-2 2H8l-3.4 2.9V5a2 2 0 0 1 2-2H15a2 2 0 0 1 2 2z"/></svg>
+      <span>Feedback</span>
+    </a>
+    <a href="fun.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.2" width="14" height="11.6" rx="2.2"/><circle cx="7.2" cy="8.2" r="1.2"/><path d="m4 14.6 3.6-3.4 2.4 2.2 2.5-2 3.5 3.4"/></svg>
+      <span>Moments</span>
+    </a>
+</nav>
+
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -2893,3 +2893,359 @@ td.is-lab::before { font-weight: 600; }
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+
+/* ==========================================================================
+   TRICOLOUR LAYER
+   Saffron, white and India green over a navy structure. Saffron stays the
+   action colour, green carries status, navy holds the frame. Appended last.
+   ========================================================================== */
+
+:root {
+  /* flag */
+  --saffron: #ff9933;
+  --saffron-deep: #a64b00;
+  --green: #138808;
+  --green-deep: #0e6b06;
+  --navy: #0b2a6f;
+  --navy-deep: #071a45;
+
+  /* structure */
+  --paper: #f6f8fb;
+  --paper-2: #ffffff;
+  --ink: #0b1b33;
+  --ink-2: #24354f;
+  --muted: #5a6a80;
+  --line: #d8e0ea;
+  --line-strong: #b9c6d6;
+
+  /* accents */
+  --accent: #ff9933;
+  --accent-ink: #a64b00;
+  --accent-soft: #fff1e0;
+  --green-soft: #e8f5e4;
+  --green-ink: #0e6b06;
+
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(11, 27, 51, 0.06);
+  --shadow: 0 1px 2px rgba(11, 27, 51, 0.06), 0 14px 34px -16px rgba(11, 27, 51, 0.18);
+
+  /* glass */
+  --liquid-fill-1: rgba(255, 255, 255, 0.84);
+  --liquid-fill-2: rgba(255, 255, 255, 0.46);
+  --liquid-fill-3: rgba(238, 245, 255, 0.62);
+  --liquid-edge: rgba(255, 255, 255, 0.95);
+  --liquid-spec: rgba(255, 255, 255, 0.98);
+  --liquid-glow: rgba(19, 136, 8, 0.14);
+  --liquid-tint-strong: rgba(11, 42, 111, 0.06);
+  --liquid-tint-soft: rgba(11, 42, 111, 0.04);
+  --liquid-tint-hover: rgba(11, 42, 111, 0.09);
+  --liquid-scroll: rgba(11, 42, 111, 0.22);
+}
+
+/* the wash: saffron from the top left, green from the bottom right */
+body::after {
+  background:
+    radial-gradient(38vmax 38vmax at 6% 2%, rgba(255, 153, 51, 0.42), transparent 60%),
+    radial-gradient(34vmax 34vmax at 94% 8%, rgba(255, 255, 255, 0.85), transparent 58%),
+    radial-gradient(46vmax 46vmax at 88% 88%, rgba(19, 136, 8, 0.3), transparent 62%),
+    radial-gradient(30vmax 30vmax at 10% 94%, rgba(11, 42, 111, 0.12), transparent 60%),
+    radial-gradient(28vmax 28vmax at 50% 46%, rgba(255, 255, 255, 0.55), transparent 66%);
+}
+
+/* the technical grid, in navy */
+body::before {
+  background-image:
+    linear-gradient(to right, rgba(11, 42, 111, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 42, 111, 0.055) 1px, transparent 1px);
+}
+
+/* --- the flag hairline: header bottom, footer top ----------------------- */
+.site-header { border-bottom: 0; }
+.site-header::after,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--saffron) 0 33.34%,
+    #ffffff 33.34% 66.67%,
+    var(--green) 66.67% 100%);
+  pointer-events: none;
+}
+
+.site-header::after { bottom: -1px; }
+.site-footer { border-top: 0; }
+.site-footer::before { top: 0; }
+
+/* --- brand mark and badges ---------------------------------------------- */
+.brand__mark {
+  background-image: linear-gradient(140deg, var(--saffron) 0%, #ffffff 52%, var(--green) 100%);
+  color: var(--navy-deep);
+  border-color: rgba(11, 27, 51, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(11, 27, 51, 0.5);
+}
+
+.badge-cr {
+  background-image: linear-gradient(160deg, #2aa32a, var(--green));
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.badge-2026 {
+  background-image: linear-gradient(160deg, #ffb066, var(--saffron));
+  color: #3a1a00;
+}
+
+/* --- chips: white label, navy type -------------------------------------- */
+.now-chip,
+.panel__note,
+.file-card__icon,
+td.is-lab::before {
+  color: var(--navy-deep);
+  border-color: rgba(11, 27, 51, 0.14);
+}
+
+.now-chip::before { background: var(--green); }
+
+/* --- links and focus ----------------------------------------------------- */
+a { color: var(--accent-ink); }
+a:hover { color: var(--green-deep); }
+.inline-link { color: var(--accent-ink); }
+
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+/* --- table: navy header, saffron today, green labs ---------------------- */
+.timetable--grid thead th {
+  background-color: rgba(11, 42, 111, 0.07);
+  color: var(--navy-deep);
+}
+
+.timetable--grid tbody th {
+  background-color: rgba(11, 42, 111, 0.045);
+  color: var(--ink);
+}
+
+.timetable--grid tbody tr.is-today td { background-color: rgba(255, 153, 51, 0.2); }
+.timetable--grid tbody tr.is-today th[scope="row"] { background-color: rgba(255, 153, 51, 0.28); }
+
+td.is-lab { background-color: rgba(19, 136, 8, 0.07); }
+
+/* --- buttons ------------------------------------------------------------- */
+.btn--accent {
+  background: linear-gradient(160deg, #ffb066 0%, var(--saffron) 55%, #f07c00 100%);
+  color: #331500;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.btn--ghost {
+  background-color: rgba(255, 255, 255, 0.6);
+  background-image: linear-gradient(158deg, rgba(255, 255, 255, 0.9), transparent 80%);
+  color: var(--navy-deep);
+  border-color: rgba(11, 27, 51, 0.16);
+}
+
+.btn--ghost:hover {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+
+/* --- the marquee becomes the flag band ---------------------------------- */
+.marquee {
+  background-color: var(--navy-deep);
+  border-block: 0;
+  color: #ffffff;
+}
+
+.marquee__group span { color: #ffffff; }
+.marquee::after { color: var(--saffron); }
+
+/* --- dark theme: navy ground, flag accents ------------------------------ */
+[data-theme="dark"] {
+  --paper: #070e1c;
+  --paper-2: #0d1730;
+  --ink: #eaf0f8;
+  --ink-2: #c3cede;
+  --muted: #8d9cb3;
+  --line: #1e2c46;
+  --line-strong: #2c3e5e;
+
+  --accent: #ff9933;
+  --accent-ink: #ffb566;
+  --accent-soft: #2a1c0c;
+  --green: #138808;
+  --green-ink: #4cc94c;
+  --green-soft: #0f2410;
+
+  --liquid-fill-1: rgba(122, 156, 208, 0.14);
+  --liquid-fill-2: rgba(13, 23, 48, 0.58);
+  --liquid-fill-3: rgba(19, 136, 8, 0.1);
+  --liquid-edge: rgba(160, 190, 230, 0.24);
+  --liquid-spec: rgba(200, 220, 255, 0.22);
+  --liquid-glow: rgba(255, 153, 51, 0.16);
+  --liquid-tint-strong: rgba(160, 190, 230, 0.1);
+  --liquid-tint-soft: rgba(160, 190, 230, 0.05);
+  --liquid-tint-hover: rgba(160, 190, 230, 0.13);
+  --liquid-scroll: rgba(160, 190, 230, 0.26);
+}
+
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(38vmax 38vmax at 6% 2%, rgba(255, 153, 51, 0.24), transparent 60%),
+    radial-gradient(34vmax 34vmax at 94% 8%, rgba(60, 100, 170, 0.22), transparent 58%),
+    radial-gradient(46vmax 46vmax at 88% 88%, rgba(19, 136, 8, 0.22), transparent 62%),
+    radial-gradient(30vmax 30vmax at 10% 94%, rgba(11, 42, 111, 0.4), transparent 60%);
+}
+
+[data-theme="dark"] body::before {
+  background-image:
+    linear-gradient(to right, rgba(160, 190, 230, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(160, 190, 230, 0.07) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .site-header {
+  background-color: rgba(7, 14, 28, 0.92);
+  background-image: linear-gradient(180deg, rgba(160, 190, 230, 0.06), transparent);
+}
+
+[data-theme="dark"] .bottom-nav {
+  background-color: rgba(7, 14, 28, 0.95);
+  background-image: linear-gradient(0deg, rgba(160, 190, 230, 0.06), transparent);
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: rgba(13, 23, 48, 0.5);
+  background-image: linear-gradient(180deg, rgba(160, 190, 230, 0.05), transparent 65%);
+}
+
+[data-theme="dark"] .now-chip,
+[data-theme="dark"] .panel__note,
+[data-theme="dark"] .file-card__icon,
+[data-theme="dark"] td.is-lab::before {
+  background-color: rgba(234, 240, 248, 0.94);
+  color: var(--navy-deep);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .timetable--grid thead th {
+  background-color: rgba(160, 190, 230, 0.1);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .timetable--grid tbody th {
+  background-color: rgba(160, 190, 230, 0.06);
+}
+
+[data-theme="dark"] .timetable--grid tbody tr.is-today td { background-color: rgba(255, 153, 51, 0.18); }
+[data-theme="dark"] .timetable--grid tbody tr.is-today th[scope="row"] { background-color: rgba(255, 153, 51, 0.24); }
+
+[data-theme="dark"] td.is-lab { background-color: rgba(19, 136, 8, 0.16); }
+
+[data-theme="dark"] .btn--ghost {
+  background-color: rgba(160, 190, 230, 0.08);
+  background-image: linear-gradient(158deg, rgba(160, 190, 230, 0.14), transparent 80%);
+  color: var(--ink);
+  border-color: rgba(160, 190, 230, 0.24);
+}
+
+[data-theme="dark"] .btn--ghost:hover {
+  border-color: var(--green-ink);
+  color: var(--green-ink);
+}
+
+[data-theme="dark"] .brand__mark {
+  background-image: linear-gradient(140deg, var(--saffron) 0%, #f2f6ff 52%, var(--green) 100%);
+  color: var(--navy-deep);
+}
+
+[data-theme="dark"] .marquee { background-color: #050a16; }
+[data-theme="dark"] a { color: var(--accent-ink); }
+[data-theme="dark"] a:hover { color: var(--green-ink); }
+[data-theme="dark"] .inline-link { color: var(--accent-ink); }
+[data-theme="dark"] :focus-visible { outline-color: #a8c4f0; }
+
+/* the section jump pills read as instrument tabs */
+.section-nav a[aria-current="true"],
+.section-nav a:hover {
+  border-color: var(--green);
+  color: var(--green-deep);
+}
+
+[data-theme="dark"] .section-nav a[aria-current="true"],
+[data-theme="dark"] .section-nav a:hover {
+  border-color: var(--green-ink);
+  color: var(--green-ink);
+}
+
+/* --- tricolour refinements ---------------------------------------------- */
+:root {
+  /* let the green sit deeper in the corner and stay lighter over the page */
+}
+
+body::after {
+  background:
+    radial-gradient(38vmax 38vmax at 4% 0%, rgba(255, 153, 51, 0.4), transparent 58%),
+    radial-gradient(32vmax 32vmax at 96% 6%, rgba(255, 255, 255, 0.9), transparent 56%),
+    radial-gradient(42vmax 42vmax at 94% 96%, rgba(19, 136, 8, 0.22), transparent 58%),
+    radial-gradient(28vmax 28vmax at 8% 98%, rgba(11, 42, 111, 0.1), transparent 58%),
+    radial-gradient(26vmax 26vmax at 50% 44%, rgba(255, 255, 255, 0.6), transparent 64%);
+}
+
+/* the footer is a plate, not another pane of glass */
+.site-footer {
+  background-color: rgba(255, 255, 255, 0.86);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(246, 248, 251, 0.5));
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: rgba(9, 17, 34, 0.92);
+  background-image: linear-gradient(180deg, rgba(160, 190, 230, 0.05), transparent 60%);
+}
+
+.footer-bottom { color: var(--ink-2); }
+.footer-bottom a { color: var(--navy-deep); }
+.footer-bottom a:hover { color: var(--green-deep); }
+
+[data-theme="dark"] .footer-bottom { color: var(--ink-2); }
+[data-theme="dark"] .footer-bottom a { color: #eaf0f8; }
+[data-theme="dark"] .footer-bottom a:hover { color: var(--green-ink); }
+
+.footer-links h3 { color: var(--navy-deep); }
+[data-theme="dark"] .footer-links h3 { color: var(--muted); }
+
+/* instrument numerals: the numbers read like a spec sheet */
+.stat__num,
+.clock {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.stat__label,
+.clock__zone,
+.clock__date {
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* section eyebrows pick up the flag's order: saffron, then green */
+.section__head .eyebrow,
+.page-head .eyebrow { color: var(--accent-ink); }
+
+.eyebrow--accent { color: var(--accent-ink); }
+/* photo tiles and their labels, on the navy ground */
+[data-theme="dark"] .photo-grid__item,
+[data-theme="dark"] .photo-wall__item {
+  background-color: rgba(160, 190, 230, 0.07);
+  border-color: rgba(160, 190, 230, 0.16);
+}
+
+[data-theme="dark"] .photo-grid__label,
+[data-theme="dark"] .photo-wall__label {
+  background: rgba(7, 14, 28, 0.92);
+  color: var(--ink);
+  border-color: rgba(160, 190, 230, 0.2);
+}
