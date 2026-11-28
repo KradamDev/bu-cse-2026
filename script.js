@@ -311,6 +311,23 @@
     });
   }
 
+  /* --- share the timetable with the attendance page ---------------------- */
+  window.BU_TIMETABLE = TIMETABLE;
+
+  /* --- Attendance button, fixed bottom left ------------------------------ */
+  var attBtn = document.createElement("a");
+  attBtn.className = "fab-attendance";
+  attBtn.href = "attendance.html";
+  attBtn.setAttribute("aria-label", "Attendance tracker");
+  attBtn.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>' +
+    '<path d="m8.5 15.5 2.2 2.2 4.3-4.6"/></svg>';
+  document.body.appendChild(attBtn);
+
+  if (location.pathname.indexOf("attendance") !== -1) attBtn.classList.add("is-current");
+
   /* --- Back to top ------------------------------------------------------- */
   var toTop = document.createElement("button");
   toTop.type = "button";

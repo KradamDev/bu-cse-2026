@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attendance — BU CSE 2026</title>
+<meta name="description" content="Track your own attendance for the BU CSE 2026 batch — per subject, per month, stored in your browser.">
+<meta name="theme-color" content="#f7f5f0">
+<meta property="og:title" content="Attendance — BU CSE 2026">
+<meta property="og:description" content="Track your own attendance for the BU CSE 2026 batch — per subject, per month, stored in your browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+<script>(function(){try{var t=localStorage.getItem("bu-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+
+<div class="bg-art" aria-hidden="true">
+  <svg class="bg-art__shape art-text art-demorgan" viewBox="0 0 460 100"><text class="art-code" x="0" y="70">&#172;(A &#8743; B) &#8801; &#172;A &#8744; &#172;B</text></svg>
+  <svg class="bg-art__shape art-text art-main" viewBox="0 0 560 100"><text class="art-code" x="0" y="70">public static void main(String[] args)</text></svg>
+  <svg class="bg-art__shape art-text art-bigo" viewBox="0 0 300 100"><text class="art-code" x="0" y="70">O(n log n)</text></svg>
+  <svg class="bg-art__shape art-text art-recur" viewBox="0 0 340 100"><text class="art-code" x="0" y="70">f(n) = n &#183; f(n&#8722;1)</text></svg>
+  <svg class="bg-art__shape art-text art-binary" viewBox="0 0 420 100"><text class="art-code" x="0" y="70">01001 10110 00101 11010</text></svg>
+  <svg class="bg-art__shape art-tree" viewBox="0 0 200 200"><circle cx="100" cy="30" r="15"/><circle cx="55" cy="92" r="15"/><circle cx="145" cy="92" r="15"/><circle cx="28" cy="152" r="15"/><circle cx="82" cy="152" r="15"/><circle cx="172" cy="152" r="15"/><path d="M100 45 55 77M100 45 145 77M55 107 28 137M55 107 82 137M145 107 172 137"/></svg>
+  <svg class="bg-art__shape art-list" viewBox="0 0 320 120"><rect x="6" y="32" width="70" height="46" rx="6"/><rect x="125" y="32" width="70" height="46" rx="6"/><rect x="244" y="32" width="70" height="46" rx="6"/><path d="M80 55h34M112 49l8 6-8 6M199 55h34M231 49l8 6-8 6"/></svg>
+  <svg class="bg-art__shape art-truth" viewBox="0 0 260 170"><path d="M10 34h240M10 74h240M10 114h240M10 154h240M70 12v150M130 12v150M200 12v150"/><text class="art-code art-code--sm" x="18" y="28">A B A&#8743;B</text><text class="art-code art-code--sm" x="18" y="68">0 0  0</text><text class="art-code art-code--sm" x="18" y="108">0 1  0</text><text class="art-code art-code--sm" x="18" y="148">1 1  1</text></svg>
+  <svg class="bg-art__shape art-stack" viewBox="0 0 200 220"><path d="M42 30h116v46H42zM42 90h116v46H42zM42 150h116v46H42z"/><path d="M22 20v186M178 20v186"/></svg>
+
+  <svg class="bg-art__shape art-text art-while" viewBox="0 0 360 100"><text class="art-code" x="0" y="70">while (true) { }</text></svg>
+  <svg class="bg-art__shape art-text art-sql" viewBox="0 0 500 100"><text class="art-code" x="0" y="70">SELECT * FROM students;</text></svg>
+  <svg class="bg-art__shape art-text art-git" viewBox="0 0 440 100"><text class="art-code" x="0" y="70">git commit -m "ship it"</text></svg>
+  <svg class="bg-art__shape art-text art-exp" viewBox="0 0 260 100"><text class="art-code" x="0" y="70">O(2^n)</text></svg>
+  <svg class="bg-art__shape art-text art-guard" viewBox="0 0 340 100"><text class="art-code" x="0" y="70">if (x != null)</text></svg>
+  <svg class="bg-art__shape art-gates" viewBox="0 0 300 140"><path d="M20 20h44v44H20z"/><path d="M44 20v44M20 42h44"/><path d="M170 20a34 34 0 0 1 0 44h-34V20z"/><path d="M136 42h-30M20 96h250"/><path d="M64 42h34"/></svg>
+  <svg class="bg-art__shape art-search" viewBox="0 0 320 120"><path d="M10 40h300M10 90h300M10 40v50M310 40v50"/><path d="M150 26v78" stroke-dasharray="6 8"/><rect x="10" y="40" width="140" height="50"/><path d="M30 65h20M70 65h20M110 65h20"/></svg>
+  <svg class="bg-art__shape art-graph" viewBox="0 0 220 200"><circle cx="40" cy="40" r="14"/><circle cx="180" cy="50" r="14"/><circle cx="60" cy="150" r="14"/><circle cx="170" cy="160" r="14"/><path d="M54 44 166 50M48 54 56 136M74 146 156 158M176 64 172 146M180 50 66 42"/></svg>
+  <svg class="bg-art__shape art-flow" viewBox="0 0 380 120"><rect x="6" y="34" width="90" height="50" rx="6"/><rect x="145" y="34" width="90" height="50" rx="6"/><rect x="284" y="34" width="90" height="50" rx="6"/><path d="M96 59h40M128 53l8 6-8 6M235 59h40M267 53l8 6-8 6"/></svg>
+</div>
+
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="BU CSE 2026 — home">
+      <span class="brand__mark" aria-hidden="true">26</span>
+      <span class="brand__text">
+        <span class="brand__name">BU CSE</span>
+        <span class="brand__sub">Batch of 2026</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="info.html">Info</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="fun.html">Moments</a>
+      <a href="about.html">About me</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+      <svg class="theme-toggle__sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="3.6"/><path d="M10 1.6v1.9M10 16.5v1.9M1.6 10h1.9M16.5 10h1.9M4.1 4.1l1.3 1.3M14.6 14.6l1.3 1.3M15.9 4.1l-1.3 1.3M5.4 14.6l-1.3 1.3"/>
+      </svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M16.2 12.6A6.8 6.8 0 0 1 7.4 3.8 7.2 7.2 0 1 0 16.2 12.6z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="wrap reveal">
+      <span class="eyebrow eyebrow--accent">06 — Attendance</span>
+      <h1>How much of the month <em>you actually attended</em>.</h1>
+      <p class="lead">
+        Every class the timetable schedules for this month, subject by subject. Tap a class to mark
+        it present or absent. It is kept in this browser only — nothing leaves your device.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section section--plain" style="padding-top:8px" id="tracker">
+      <div class="panel reveal">
+        <div class="panel__head">
+          <h3>This month</h3>
+        </div>
+
+        <div class="att-controls">
+          <button class="att-nav" type="button" data-prev aria-label="Previous month">&#8592;</button>
+          <div class="att-month" data-month>—</div>
+          <button class="att-nav" type="button" data-next aria-label="Next month">&#8594;</button>
+          <div class="att-batch" role="group" aria-label="Lab batch">
+            <button type="button" data-batch="B1" aria-pressed="true">B1</button>
+            <button type="button" data-batch="B2" aria-pressed="false">B2</button>
+          </div>
+        </div>
+
+        <div class="att-summary" data-summary aria-live="polite"></div>
+      </div>
+
+      <div class="att-grid reveal" data-subjects></div>
+
+      <div class="panel reveal" style="margin-top:16px">
+        <div class="panel__head">
+          <h3>Mark the days</h3>
+          <span class="panel__note att-hint">tap a class: blank → present → absent</span>
+        </div>
+        <div class="att-days" data-days></div>
+        <div class="cta-row">
+          <button class="btn btn--ghost btn--sm" type="button" data-clear>Clear this month</button>
+          <span class="cta-row__note">Clears only the marks for the month shown above.</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>BU CSE <em style="font-style:italic;color:var(--accent)">2026</em></h2>
+        <p>The batch site for Computer Science &amp; Engineering, Bundelkhand University — kept alive by students.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="info.html">Info</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="fun.html">Moments</a></li>
+            <li><a href="about.html">About me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> BU CSE 2026 · Student-maintained</span>
+      <span>Built by <a href="https://kradam-portfolio.netlify.app/" target="_blank" rel="noopener">Kradam Dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Primary, mobile">
+    <a href="index.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.4 10 4l7 6.4V17a1 1 0 0 1-1 1h-4v-5.2H8V18H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="resources.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.6A1.6 1.6 0 0 1 5.6 3H16v14H5.6A1.6 1.6 0 0 0 4 18.6z"/><path d="M4 4.6v14"/></svg>
+      <span>Resources</span>
+    </a>
+    <a href="info.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.4"/><path d="M10 9.2v5"/><path d="M10 6.4h.01"/></svg>
+      <span>Info</span>
+    </a>
+    <a href="feedback.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 12.4a2 2 0 0 1-2 2H8l-3.4 2.9V5a2 2 0 0 1 2-2H15a2 2 0 0 1 2 2z"/></svg>
+      <span>Feedback</span>
+    </a>
+    <a href="fun.html">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.2" width="14" height="11.6" rx="2.2"/><circle cx="7.2" cy="8.2" r="1.2"/><path d="m4 14.6 3.6-3.4 2.4 2.2 2.5-2 3.5 3.4"/></svg>
+      <span>Moments</span>
+    </a>
+</nav>
+
+<script src="script.js" defer></script>
+<script src="attendance.js" defer></script>
+</body>
+</html>
