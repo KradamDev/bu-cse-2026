@@ -352,6 +352,20 @@
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   });
 
+  /* --- Exams: mark the next paper ---------------------------------------- */
+  var examRows = Array.prototype.slice.call(document.querySelectorAll("[data-exam-date]"));
+  if (examRows.length) {
+    var midnight = new Date();
+    midnight.setHours(0, 0, 0, 0);
+    var nextRow = null;
+    examRows.forEach(function (row) {
+      row.classList.remove("is-next");
+      var when = new Date(row.getAttribute("data-exam-date") + "T00:00:00");
+      if (!nextRow && when >= midnight) nextRow = row;
+    });
+    if (nextRow) nextRow.classList.add("is-next");
+  }
+
   /* --- Footer year ------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
